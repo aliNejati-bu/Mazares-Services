@@ -8,11 +8,12 @@ return [
         'index' => '/',
         'signup' => "/sign-up",
         'login' => '/login',
-        'panel' => '/panel',
-        'userList' => '/panel/user',
+        'panel' => '/dash',
+        'userList' => '/dash/user',
 
         // user Routes
-        'apps' => '/panel/apps'
+        'apps' => '/dash/apps',
+        'appPanel' => '/dash/apps/panel/!-!',
 
     ],
 ];

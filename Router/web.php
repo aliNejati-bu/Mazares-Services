@@ -25,4 +25,8 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->post("/apps", function () {
         return (new \MazaresServeces\App\Controller\App\AppController())->doCreateApp();
     });
+
+    $router->get("/apps/panel/{param}", function (string $param) {
+        return (new \MazaresServeces\App\Controller\App\AppController())->panel($param);
+    });
 });

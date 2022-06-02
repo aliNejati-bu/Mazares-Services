@@ -34,7 +34,8 @@
                         <h4 class="page-title pull-left"><?= $title ?></h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="<?= route("panel") ?>">Home</a></li>
-                            <li>Apps</li>
+                            <li><a href="<?= route("apps")?>">Apps</a></li>
+                            <li><?= $title ?></li>
                         </ul>
                     </div>
                 </div>
@@ -49,34 +50,40 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card__header_wrapper">
-                                <h4 class="header-title">Progress Table</h4>
-                                <button class="btn btn-info mb-3" data-toggle="modal" data-target="#create">Creat New
-                                    App
+                                <h4 class="header-title">Configs For <?= $app->app_name ?></h4>
+                                <div class="btn-group">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                        select App (<?= $app->packagename ?>)
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <?php foreach ($packagenames as $packagename): ?>
+                                            <a class="dropdown-item" href="<?= route("appPanel", str_replace(".", "-", $packagename->packagename)) ?>"><?= $packagename->packagename ?></a>
+                                        <?php endforeach; ?>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item">current App : <?= $app->packagename ?> </a>
+                                    </div>
+                                </div>
+                                <button class="btn btn-info mb-3" data-toggle="modal" data-target="#create">Creat Config
                                 </button>
+
                                 <div class="modal fade bd-example-modal-lg" id="create">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Create new App</h5>
+                                                <h5 class="modal-title">Create new Config</h5>
                                                 <button type="button" class="close" data-dismiss="modal">
                                                     <span>&times;</span></button>
                                             </div>
                                             <form method="post">
                                                 <div class="modal-body">
                                                     <div class="form-group">
-                                                        <label for="example-text-input" class="col-form-label">App
+                                                        <label for="example-text-input" class="col-form-label">Config
                                                             Name *</label>
                                                         <input class="form-control" required type="text"
                                                                placeholder="name Here..." id="example-text-input"
-                                                               name="app_name">
+                                                               name="config_name">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="example-text-input" class="col-form-label">PackageName
-                                                            *</label>
-                                                        <input class="form-control" required type="text"
-                                                               placeholder="packagename Here..." id="example-text-input"
-                                                               name="packagename">
-                                                    </div>
+                                                    <input type="hidden" name="app_id" value="<?= $app->id ?>">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
@@ -95,21 +102,19 @@
                                         <thead class="text-uppercase">
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">App Name</th>
-                                            <th scope="col">PackageName</th>
+                                            <th scope="col">Config Name</th>
+                                            <th scope="col">Config For</th>
                                             <th scope="col">Create Date</th>
                                             <th scope="col">action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <?php foreach ($apps as $app): ?>
+                                        <?php foreach ($app->configs as $config): ?>
                                             <tr>
-                                                <th scope="row"><?= $app->id ?></th>
-                                                <td>
-                                                    <a href="<?= route("appPanel", str_replace(".", "-", $app->packagename)) ?>"><?= $app->app_name ?></a>
-                                                </td>
-                                                <td><?= $app->packagename ?></td>
-                                                <td><?= $app->created_at ?></td>
+                                                <th scope="row"><?= $config->id ?></th>
+                                                <td><?= $config->config_name ?></td>
+                                                <td><?= $config->app_name ?></td>
+                                                <td><?= $config->created_at ?></td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
                                                         <li class="mr-3"><a href="#" class="text-secondary"><i

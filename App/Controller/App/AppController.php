@@ -2,7 +2,6 @@
 
 namespace MazaresServeces\App\Controller\App;
 
-use MazaresServeces\App\Model\App;
 use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
 use MazaresServeces\Classes\Redirect;
 use MazaresServeces\Classes\ViewEngine;
@@ -13,7 +12,7 @@ class AppController
     {
         $title = "apps";
         $apps = auth()->userModel->apps;
-        return view('panel>User>App>index', compact("title","apps"));
+        return view('panel>User>App>index', compact("title", "apps"));
     }
 
     /**
@@ -34,6 +33,24 @@ class AppController
         } catch (\Exception $exception) {
             return \redirect(back())->with("error", "database Error.");
         }
+
+    }
+
+    /**
+     * @param string $packageName
+     * @return ViewEngine
+     */
+    public function panel(string $packageName): ViewEngine
+    {
+        $packageName = str_replace("-", ".", $packageName);
+        $app = auth()->userModel->apps()->where("packagename", "=", $packageName)->first();
+        $packagenames = auth()->userModel->apps()->get(["packagename"]);
+        if (!$app) {
+            return view("err>404");
+        }
+        $title = $app->app_name . " App panel";
+
+        return view("panel>User>App>Panel>index", compact("app", "title","packagenames"));
 
     }
 
