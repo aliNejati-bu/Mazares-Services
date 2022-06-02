@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Database\Seed;
+namespace RemoteConfig\Database\Seed;
 
-use PTC\App\Model\User;
+use RemoteConfig\App\Model\User;
 
 class UserSeeder
 {

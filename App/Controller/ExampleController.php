@@ -1,6 +1,6 @@
 <?php
 
-namespace PTC\App\Controller;
+namespace RemoteConfig\App\Controller;
 
 class ExampleController
 {

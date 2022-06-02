@@ -2,9 +2,9 @@
 
 use Phroute\Phroute\RouteCollector;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use PTC\Classes\Exception\ViewNotFoundedException;
-use PTC\Classes\Redirect;
-use PTC\Classes\ViewEngine;
+use RemoteConfig\Classes\Exception\ViewNotFoundedException;
+use RemoteConfig\Classes\Redirect;
+use RemoteConfig\Classes\ViewEngine;
 
 class Boot
 {
@@ -70,7 +70,7 @@ class Boot
     public static function generalBoot()
     {
         spl_autoload_register(function ($class) {
-            $class = str_replace('PTC\\', "", $class);
+            $class = str_replace('RemoteConfig\\', "", $class);
             $file = BASE_DIR . DIRECTORY_SEPARATOR .
                 str_replace("\\", DIRECTORY_SEPARATOR, $class) . // replace \ in class namespace to DIRECTORY_SEPARATOR
                 ".php";
@@ -84,7 +84,7 @@ class Boot
     {
 
         $capsule = new Capsule;
-        $dataBaseConfig = \PTC\Classes\Config::getInstance()->getAllConfig("database");
+        $dataBaseConfig = \RemoteConfig\Classes\Config::getInstance()->getAllConfig("database");
         $capsule->addConnection([
 
             "driver" => "mysql",

@@ -4,5 +4,5 @@ return [
     "server" => "localhost",
     "username" => "root",
     "password" => "",
-    "dbname" => "ptcapp"
+    "dbname" => "remote_config"
 ];

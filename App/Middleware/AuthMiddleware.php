@@ -1,14 +1,14 @@
 <?php
 
-namespace PTC\App\Middleware;
+namespace RemoteConfig\App\Middleware;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-use PTC\Classes\Auth;
-use PTC\Classes\Config;
-use PTC\Classes\Request;
+use RemoteConfig\Classes\Auth;
+use RemoteConfig\Classes\Config;
+use RemoteConfig\Classes\Request;
 
-class AuthMiddleware implements \PTC\Boot\Interfaces\MiddlewareInterface
+class AuthMiddleware implements \RemoteConfig\Boot\Interfaces\MiddlewareInterface
 {
 
     /**

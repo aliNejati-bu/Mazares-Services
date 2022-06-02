@@ -1,10 +1,10 @@
 <?php
 
-namespace PTC\Classes;
+namespace RemoteConfig\Classes;
 
 use Firebase\JWT\JWT;
-use PTC\App\Model\User;
-use PTC\App\Model\UserSessionActivity;
+use RemoteConfig\App\Model\User;
+use RemoteConfig\App\Model\UserSessionActivity;
 
 class Auth
 {

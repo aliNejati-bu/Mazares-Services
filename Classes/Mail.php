@@ -1,6 +1,6 @@
 <?php
 
-namespace PTC\Classes;
+namespace RemoteConfig\Classes;
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;

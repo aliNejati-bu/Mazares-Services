@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Classes;
+namespace RemoteConfig\Classes;
 
-use PTC\Classes\Validator\Validator;
+use RemoteConfig\Classes\Validator\Validator;
 use Somnambulist\Components\Validation\Validation;
 
 class Request

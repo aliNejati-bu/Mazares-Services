@@ -1,10 +1,10 @@
 <?php
 
-namespace PTC\App\Controller\Admin;
+namespace RemoteConfig\App\Controller\Admin;
 
-use PTC\App\Model\User;
-use PTC\Classes\Exception\ViewNotFoundedException;
-use PTC\Classes\ViewEngine;
+use RemoteConfig\App\Model\User;
+use RemoteConfig\Classes\Exception\ViewNotFoundedException;
+use RemoteConfig\Classes\ViewEngine;
 
 class UserController
 {

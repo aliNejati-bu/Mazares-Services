@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Database\Seed;
+namespace RemoteConfig\Database\Seed;
 
-use PTC\App\Model\Permission;
+use RemoteConfig\App\Model\Permission;
 
 class PermissionSeeder
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Classes;
+namespace RemoteConfig\Classes;
 
-use PTC\Classes\Exception\ViewNotFoundedException;
+use RemoteConfig\Classes\Exception\ViewNotFoundedException;
 
 class ViewEngine
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace PTC\Classes\Validator;
+namespace RemoteConfig\Classes\Validator;
 
-use PTC\Classes\Config;
-use PTC\Classes\Exception\ValidatorNotFoundException;
+use RemoteConfig\Classes\Config;
+use RemoteConfig\Classes\Exception\ValidatorNotFoundException;
 use Somnambulist\Components\Validation\Factory;
 use Somnambulist\Components\Validation\Validation;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace PTC\Classes\Validator;
+namespace RemoteConfig\Classes\Validator;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;
-use PTC\Classes\Config;
+use RemoteConfig\Classes\Config;
 
 class Rules
 {

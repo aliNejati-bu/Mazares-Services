@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Classes\SMS;
+namespace RemoteConfig\Classes\SMS;
 
-use PTC\Classes\interfaces\SMSSenderInterface;
+use RemoteConfig\Classes\interfaces\SMSSenderInterface;
 
 class SMSManager
 {

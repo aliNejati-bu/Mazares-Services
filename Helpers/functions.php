@@ -3,11 +3,11 @@
 
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
-use PTC\Classes\Auth;
-use PTC\Classes\Messages;
-use PTC\Classes\Redirect;
-use PTC\Classes\Request;
-use PTC\Classes\ViewEngine;
+use RemoteConfig\Classes\Auth;
+use RemoteConfig\Classes\Messages;
+use RemoteConfig\Classes\Redirect;
+use RemoteConfig\Classes\Request;
+use RemoteConfig\Classes\ViewEngine;
 
 #[Pure] function redirect(string $target): Redirect
 {
@@ -47,10 +47,10 @@ function error(string $name, bool $default = false): mixed
 
 function route($name, ...$params)
 {
-    if (!isset(\PTC\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
+    if (!isset(\RemoteConfig\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
         return '/';
     }
-    $route = \PTC\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
+    $route = \RemoteConfig\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
     foreach ($params as $param) {
         $route = str_replace("!-!", $param, $route);
     }
@@ -87,7 +87,7 @@ function auth(): ?Auth
  */
 function viewPath(string $viewName): string
 {
-    $baseViewPath = \PTC\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
+    $baseViewPath = \RemoteConfig\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
     return $baseViewPath . DIRECTORY_SEPARATOR . str_replace(">", DIRECTORY_SEPARATOR, $viewName) . ".php";
 }
 
@@ -96,7 +96,7 @@ function viewPath(string $viewName): string
  */
 function get404ViewName(): string
 {
-    return \PTC\Classes\Config::getInstance()->getAllConfig("view")["404"];
+    return \RemoteConfig\Classes\Config::getInstance()->getAllConfig("view")["404"];
 }
 
 
@@ -128,7 +128,7 @@ function isJsonAccept(): bool
 
 function sms()
 {
-    return \PTC\Classes\SMS\SMSManager::getInstance();
+    return \RemoteConfig\Classes\SMS\SMSManager::getInstance();
 }
 
 

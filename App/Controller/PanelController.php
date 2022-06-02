@@ -1,9 +1,9 @@
 <?php
 
-namespace PTC\App\Controller;
+namespace RemoteConfig\App\Controller;
 
-use PTC\Classes\Redirect;
-use PTC\Classes\ViewEngine;
+use RemoteConfig\Classes\Redirect;
+use RemoteConfig\Classes\ViewEngine;
 
 class PanelController
 {
@@ -13,9 +13,6 @@ class PanelController
      */
     public function index(): ViewEngine|Redirect
     {
-        if (!auth()->userModel->isPhoneVerify()) {
-            return redirect(route("verifyPhone"));
-        }
         $currentPage = "panel";
         return view("panel>panel", compact("currentPage"));
     }

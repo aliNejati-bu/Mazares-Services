@@ -2,7 +2,7 @@
 
 
 return [
-    'lang' => 'fa',
+    'lang' => 'en',
     'app_url' => 'http://localhost:8000',
     'routes' => [
         'index' => '/',
@@ -10,13 +10,6 @@ return [
         'login' => '/login',
         'panel' => '/panel',
         'userList' => '/panel/user',
-        'apiAddPhone' => "/api/add-phone",
-        'apiSendVerifyPhone' => '/api/send-verify-code',
-        'apiVerifyPhoneCode' => "/api/verify-phone",
-        'verifyPhone' => '/panel/verify-phone',
 
-        // user routes.
-        'addSlug' => '/panel/slug',
-        'addLink' => '/panel/slug/link'
     ],
 ];

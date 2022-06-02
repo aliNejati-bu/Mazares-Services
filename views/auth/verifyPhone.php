@@ -1,6 +1,6 @@
 <?php
 
-use PTC\Classes\Config;
+use RemoteConfig\Classes\Config;
 
 ?>
 <!DOCTYPE html>

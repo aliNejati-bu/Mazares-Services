@@ -1,10 +1,10 @@
 <?php
 
-namespace PTC\Classes\SMS;
+namespace RemoteConfig\Classes\SMS;
 
-use PTC\Classes\interfaces\SMSSenderInterface;
+use RemoteConfig\Classes\interfaces\SMSSenderInterface;
 
-class Melipayamak implements \PTC\Classes\interfaces\SMSSenderInterface
+class Melipayamak implements \RemoteConfig\Classes\interfaces\SMSSenderInterface
 {
 
     /**

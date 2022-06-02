@@ -1,7 +1,7 @@
 <?php
 
-use PTC\App\Model\User;
-use PTC\Classes\Validator\Rules;
+use RemoteConfig\App\Model\User;
+use RemoteConfig\Classes\Validator\Rules;
 
 return [
     "user_email" => ['required', 'email', 'min:3',"callback" => Rules::unique(User::class, "user_email")],

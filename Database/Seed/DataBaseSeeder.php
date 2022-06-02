@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\Database\Seed;
+namespace RemoteConfig\Database\Seed;
 
-use PTC\App\Model\Role;
+use RemoteConfig\App\Model\Role;
 
 class DataBaseSeeder
 {

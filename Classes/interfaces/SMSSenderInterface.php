@@ -1,6 +1,6 @@
 <?php
 
-namespace PTC\Classes\interfaces;
+namespace RemoteConfig\Classes\interfaces;
 
 interface SMSSenderInterface
 {

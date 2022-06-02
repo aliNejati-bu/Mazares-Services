@@ -3,9 +3,9 @@
 return [
     // add middleware to kernel
     'middleware' => [
-        'exampleMiddleware' => \PTC\App\Middleware\ExampleMiddleware::class,
-        'authMiddleware' => \PTC\App\Middleware\AuthMiddleware::class,
-        'apiAuthMiddleware' => \PTC\App\Middleware\ApiAuthMiddleware::class,
-        'onlyVerifyPhone' => \PTC\App\Middleware\OnlyVerifyPhoneMiddleware::class,
+        'exampleMiddleware' => \RemoteConfig\App\Middleware\ExampleMiddleware::class,
+        'authMiddleware' => \RemoteConfig\App\Middleware\AuthMiddleware::class,
+        'apiAuthMiddleware' => \RemoteConfig\App\Middleware\ApiAuthMiddleware::class,
+        'onlyVerifyPhone' => \RemoteConfig\App\Middleware\OnlyVerifyPhoneMiddleware::class,
     ]
 ];

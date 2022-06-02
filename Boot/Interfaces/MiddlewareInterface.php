@@ -1,6 +1,6 @@
 <?php
 
-namespace PTC\Boot\Interfaces;
+namespace RemoteConfig\Boot\Interfaces;
 
 interface MiddlewareInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PTC\Classes;
+namespace RemoteConfig\Classes;
 
 use JetBrains\PhpStorm\NoReturn;
 

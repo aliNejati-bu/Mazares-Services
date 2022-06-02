@@ -1,15 +1,15 @@
 <?php
 
-namespace PTC\App\Controller;
+namespace RemoteConfig\App\Controller;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-use PTC\App\Model\User;
-use PTC\Classes\Auth;
-use PTC\Classes\Exception\ValidatorNotFoundException;
-use PTC\Classes\Redirect;
-use PTC\Classes\Request;
-use PTC\Classes\ViewEngine;
+use RemoteConfig\App\Model\User;
+use RemoteConfig\Classes\Auth;
+use RemoteConfig\Classes\Exception\ValidatorNotFoundException;
+use RemoteConfig\Classes\Redirect;
+use RemoteConfig\Classes\Request;
+use RemoteConfig\Classes\ViewEngine;
 
 class IndexController
 {

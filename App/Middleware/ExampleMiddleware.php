@@ -1,8 +1,8 @@
 <?php
 
-namespace PTC\App\Middleware;
+namespace RemoteConfig\App\Middleware;
 
-use PTC\Boot\Interfaces\MiddlewareInterface;
+use RemoteConfig\Boot\Interfaces\MiddlewareInterface;
 
 class ExampleMiddleware implements MiddlewareInterface
 {
