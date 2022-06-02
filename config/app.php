@@ -14,6 +14,7 @@ return [
         // user Routes
         'apps' => '/dash/apps',
         'appPanel' => '/dash/apps/panel/!-!',
+        'appAddConfig' => '/dash/apps/panel/configs',
 
     ],
 ];

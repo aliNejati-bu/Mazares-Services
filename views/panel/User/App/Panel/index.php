@@ -74,7 +74,7 @@
                                                 <button type="button" class="close" data-dismiss="modal">
                                                     <span>&times;</span></button>
                                             </div>
-                                            <form method="post">
+                                            <form action="<?= route("appAddConfig") ?>" method="post">
                                                 <div class="modal-body">
                                                     <div class="form-group">
                                                         <label for="example-text-input" class="col-form-label">Config
