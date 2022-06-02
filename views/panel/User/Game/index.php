@@ -3,7 +3,7 @@
 
 <head>
     <?php require viewPath("panel>layout>heade") ?>
-    <title>pricing</title>
+    <title><?= $title ?> | Mazares Services</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <div class="row align-items-center">
                 <div class="col-sm-6">
                     <div class="breadcrumbs-area clearfix">
-                        <h4 class="page-title pull-left">Games</h4>
+                        <h4 class="page-title pull-left"><?= $title ?></h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="<?= route("panel") ?>">Home</a></li>
                             <li>Games</li>
@@ -48,7 +48,10 @@
                 <div class="col-12 mt-5">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="header-title">Progress Table</h4>
+                            <div class="card__header_wrapper">
+                                <h4 class="header-title">Progress Table</h4>
+                                <button class="btn btn-info mb-3">Creat New Game</button>
+                            </div>
                             <div class="single-table">
                                 <div class="table-responsive">
                                     <table class="table table-hover progress-table text-center">
@@ -193,6 +196,7 @@
 <!-- others plugins -->
 <script src="/assets/js/plugins.js"></script>
 <script src="/assets/js/scripts.js"></script>
+<?php require viewPath("components>toastsJs")?>
 </body>
 
 </html>

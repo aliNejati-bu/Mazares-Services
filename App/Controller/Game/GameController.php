@@ -8,6 +8,7 @@ class GameController
 {
     public function index():ViewEngine
     {
-        return view('panel>User>Game>index');
+        $title = "games";
+        return view('panel>User>Game>index',compact("title"));
     }
 }

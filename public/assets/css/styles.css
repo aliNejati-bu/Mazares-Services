@@ -2835,3 +2835,8 @@ table.dataTable thead td {
 }
 
 /*-------------------- END Offset Sidebar ------------------- */
+
+.card__header_wrapper{
+    display: flex;
+    justify-content: space-between;
+}

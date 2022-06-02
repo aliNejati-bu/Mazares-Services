@@ -1,44 +1,40 @@
-<script src="/assets/libs/jquery-toast/jquery.toast.min.js"></script>
+<script src="/assets/js/toastr.min.js"></script>
 
-<?php
-if (isError()) {
-    ?>
-    <script>
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
 
-        $.toast({
-            heading: "خطا در ارسال اطلاعات",
-            text: "<ul><?php
-                foreach (errors() as $error) {
-                    echo "<li>" . $error . "</li><br>";
-                }
-                ?></ul>",
-            position: "top-right",
-            loaderBg: "#bf441d",
-            icon: "error",
-            hideAfter: 3e3,
-            stack: 1
-        })
-    </script>
     <?php
-}
-if (isMessage()){
+    if (isError()){
+    foreach (errors() as $error){
     ?>
-    <script>
-
-        $.toast({
-            heading: "پیغام ها:",
-            text: "<ul><?php
-                foreach (messages() as $error) {
-                    echo "<li>" . $error . "</li><br>";
-                }
-                ?></ul>",
-            position: "top-right",
-            loaderBg: "#3b98b5",
-            icon: "info",
-            hideAfter: 3e3,
-            stack: 1
-        })
-    </script>
+    toastr.error('<?= $error ?>')
     <?php
-}
-?>
+    }
+    }
+    ?>
+    <?php
+    if (isMessage()){
+    foreach (messages() as $error){
+    ?>
+    toastr.info('<?= $error ?>')
+    <?php
+    }
+    }
+    ?>
+</script>
