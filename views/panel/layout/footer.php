@@ -1,9 +1,5 @@
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                2017 - 2019 © Adminox theme by <a href="#">Coderthemes</a>
-            </div>
-        </div>
+<footer>
+    <div class="footer-area">
+        <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
     </div>
 </footer>
