@@ -1,73 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>404 Error | Adminox - Responsive Bootstrap 4 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="Coderthemes" name="author" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
-
-    <!-- App css -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
-    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/app-rtl.css" rel="stylesheet" type="text/css"  id="app-stylesheet" />
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>404 Error - srtdash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <!-- amcharts css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all"/>
+    <!-- style css -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+    <link rel="stylesheet" href="/assets/css/default-css.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body class="authentication-bg bg-primary authentication-bg-pattern d-flex align-items-center pb-0 vh-100">
-
-<div class="home-btn d-none d-sm-block">
-    <a href="index.html"><i class="fas fa-home h2 text-white"></i></a>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- preloader area start -->
+<div id="preloader">
+    <div class="loader"></div>
 </div>
-
-<div class="account-pages w-100 mt-5 mb-5">
+<!-- preloader area end -->
+<!-- error area start -->
+<div class="error-area ptb--100 text-center">
     <div class="container">
-
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card mb-0">
-                    <div class="card-body p-4">
-                        <div class="account-box">
-                            <div class="account-logo-box">
-                                <div class="text-center">
-                                    <a href="index.html">
-                                        <img src="assets/images/logo-dark.png" alt="" height="30">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="account-content text-center mt-4">
-                                <h1 class="text-error">404</h1>
-                                <h3 class="text-uppercase text-danger mt-4">صفحه پیدا نشد</h3>
-                                <p class="text-muted mt-3">به نظر می رسد که شما ممکن است مسیر اشتباهی را انتخاب کرده باشید. نگران نباشید ... این برای بهترین ما اتفاق می افتد. ممکن است بخواهید اتصال اینترنت خود را بررسی کنید. در اینجا یک نکته کوچک وجود دارد که ممکن است به شما در بازگشت به مسیر اصلی کمک کند.</p>
-
-                                <a class="btn btn-md btn-block btn-primary waves-effect waves-light mt-3 ffiy" href="index.html"> بازگشت به خانه</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end card-body -->
-
-            </div>
-            <!-- end col -->
+        <div class="error-content">
+            <h2>404</h2>
+            <p>Ooops! Something went wrong .</p>
+            <a href="index.html">Back to Dashboard</a>
         </div>
-        <!-- end row -->
     </div>
-    <!-- end container -->
 </div>
-<!-- end page -->
+<!-- error area end -->
 
-<!-- Vendor js -->
-<script src="/assets/js/vendor.min.js"></script>
-
-<!-- App js -->
-<script src="/ assets/js/app.min.js"></script>
-
+<!-- jquery latest version -->
+<script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/metisMenu.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/jquery.slicknav.min.js"></script>
+<!-- others plugins -->
+<script src="/assets/js/plugins.js"></script>
+<script src="/assets/js/scripts.js"></script>
 </body>
-
 
 </html>
