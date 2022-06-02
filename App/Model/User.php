@@ -47,13 +47,7 @@ class User extends Model
     }
 
 
-    /**
-     * @return HasMany
-     */
-    public function slugs(): HasMany
-    {
-        return $this->hasMany(Slug::class);
-    }
+
 
     /**
      * @return HasMany
@@ -73,13 +67,7 @@ class User extends Model
     }
 
 
-    /**
-     * @return HasMany
-     */
-    public function clicks(): HasMany
-    {
-        return $this->hasMany(Click::class);
-    }
+
 
 
     public static function getUserByEmailAndPassword(string $email, string $password)
@@ -143,17 +131,4 @@ class User extends Model
     }
 
 
-    /**
-     * @return bool
-     */
-    public function canCreateSlug(): bool
-    {
-        if ($this->user_type == 2) {
-            return true;
-        } elseif ($this->user_type == 1) {
-            return $this->slugs()->count() < 30;
-        } else {
-            return $this->slugs()->count() < 5;
-        }
-    }
 }
