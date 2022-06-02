@@ -18,7 +18,7 @@
                     <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-game"></i><span>Games</span></a>
                         <ul class="collapse">
-
+                            <li><a href="<?= route("games") ?>">games Management</a></li>
                         </ul>
                     </li>
                 </ul>

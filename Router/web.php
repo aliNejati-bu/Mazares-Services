@@ -11,7 +11,6 @@ use RemoteConfig\App\Controller\PanelController;
 $router->controller(route("index"), \RemoteConfig\App\Controller\IndexController::class);
 
 
-
 $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], function (RouteCollector $router) {
     $router->get("/", function () {
         return (new PanelController)->index();
@@ -19,5 +18,7 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->controller("/user", \RemoteConfig\App\Controller\Admin\UserController::class
     );
 
-
+    $router->get("/games", function () {
+        return (new \RemoteConfig\App\Controller\Game\GameController())->index();
+    });
 });
