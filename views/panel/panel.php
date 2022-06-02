@@ -1,89 +1,435 @@
-<!DOCTYPE html>
-<html lang="fa">
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-    <?php require $base . $dirSep . "components" . $dirSep . "toastCss.php" ?>
-    <?php require viewPath("panel>layout>heade")?>
-    <title>panel</title>
+    <?php require viewPath("panel>layout>heade") ?>
+    <title>pricing</title>
 </head>
 
 <body>
-
-<!-- Begin page -->
-<div id="wrapper">
-
-
-    <!-- Topbar Start -->
-    <?php require viewPath("panel>layout>nav")?>
-    <!-- end Topbar -->
-
-
-    <!-- ========== Left Sidebar Start ========== -->
-    <?php require viewPath("panel>sideMenu")?>
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page">
-        <div class="content">
-
-            <!-- Start Content-->
-            <div class="container-fluid">
-
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">ادمینکس</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">صفحات</a></li>
-                                    <li class="breadcrumb-item active">صفحه شروع</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">صفحه شروع (خالی)</h4>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- preloader area start -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- preloader area end -->
+<!-- page container area start -->
+<div class="page-container">
+    <!-- sidebar menu area start -->
+    <?php require viewPath("panel>sideMenu") ?>
+    <!-- sidebar menu area end -->
+    <!-- main content area start -->
+    <div class="main-content">
+        <!-- header area start -->
+        <?php require viewPath("panel>layout>header"); ?>
+        <!-- header area end -->
+        <!-- page title area start -->
+        <div class="page-title-area">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <div class="breadcrumbs-area clearfix">
+                        <h4 class="page-title pull-left">Mazares Services</h4>
+                        <ul class="breadcrumbs pull-left">
+                            <li>Home</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 clearfix">
+                    <div class="user-profile pull-right">
+                        <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
+                        <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?= auth()->userModel->name ?> <i
+                                    class="fa fa-angle-down"></i></h4>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Message</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Log Out</a>
                         </div>
                     </div>
                 </div>
-                <!-- end page title -->
-
-
-
-            </div> <!-- end container-fluid -->
-
-        </div> <!-- end content -->
-
-
-
-        <!-- Footer Start -->
-        <?php require viewPath("panel>layout>footer")?>
-        <!-- end Footer -->
-
+            </div>
+        </div>
+        <!-- page title area end -->
+        <div class="main-content-inner">
+            <!-- color pricing start -->
+            <div class="row">
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list">
+                            <div class="prc-head">
+                                <h4>Membership</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term financing</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: USD</a></li>
+                                    <li><a href="#">3-24 Month Terms</a></li>
+                                    <li class="bold"><a href="#">1 SALT/year</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list">
+                            <div class="prc-head">
+                                <h4>Premier</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: USD, EUR, GBP, JPY, RMB</a></li>
+                                    <li><a href="#">1 hour - 36 Month Terms</a></li>
+                                    <li class="bold"><a href="#">30 SALT/year</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list">
+                            <div class="prc-head">
+                                <h4>Enterprise</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: Ad Hoc Currency Selection</a></li>
+                                    <li><a href="#">24 hour - 1 Year Terms</a></li>
+                                    <li class="bold"><a href="#">Contact for Pricing</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list">
+                            <div class="prc-head">
+                                <h4>Platinum</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: Ad Hoc Currency Selection</a></li>
+                                    <li><a href="#">Metered Terms</a></li>
+                                    <li class="bold"><a href="#">Contact for Pricing</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- color pricing end -->
+            <!-- dark pricing start -->
+            <div class="row">
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list dark-pricing">
+                            <div class="prc-head">
+                                <h4>Membership</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term financing</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: USD</a></li>
+                                    <li><a href="#">3-24 Month Terms</a></li>
+                                    <li class="bold"><a href="#">1 SALT/year</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list dark-pricing">
+                            <div class="prc-head">
+                                <h4>Premier</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: USD, EUR, GBP, JPY, RMB</a></li>
+                                    <li><a href="#">1 hour - 36 Month Terms</a></li>
+                                    <li class="bold"><a href="#">30 SALT/year</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list dark-pricing">
+                            <div class="prc-head">
+                                <h4>Enterprise</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: Ad Hoc Currency Selection</a></li>
+                                    <li><a href="#">24 hour - 1 Year Terms</a></li>
+                                    <li class="bold"><a href="#">Contact for Pricing</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5">
+                    <div class="card">
+                        <div class="pricing-list dark-pricing">
+                            <div class="prc-head">
+                                <h4>Platinum</h4>
+                            </div>
+                            <div class="prc-list">
+                                <ul>
+                                    <li><a href="#">Term Finnacing & Line of Credit</a></li>
+                                    <li><a href="#">Access up to $10,000</a></li>
+                                    <li><a href="#">Get: Ad Hoc Currency Selection</a></li>
+                                    <li><a href="#">Metered Terms</a></li>
+                                    <li class="bold"><a href="#">Contact for Pricing</a></li>
+                                </ul>
+                                <a href="#">Buy Package</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- dark pricing end -->
+        </div>
     </div>
-
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
+    <!-- main content area end -->
+    <!-- footer area start-->
+    <footer>
+        <div class="footer-area">
+            <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+        </div>
+    </footer>
+    <!-- footer area end-->
 </div>
-<!-- END wrapper -->
+<!-- page container area end -->
+<!-- offset area start -->
+<div class="offset-area">
+    <div class="offset-close"><i class="ti-close"></i></div>
+    <ul class="nav offset-menu-tab">
+        <li><a class="active" data-toggle="tab" href="#activity">Activity</a></li>
+        <li><a data-toggle="tab" href="#settings">Settings</a></li>
+    </ul>
+    <div class="offset-content tab-content">
+        <div id="activity" class="tab-pane fade in show active">
+            <div class="recent-activity">
+                <div class="timeline-task">
+                    <div class="icon bg1">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Rashed sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg2">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Added</h4>
+                        <span class="time"><i class="ti-time"></i>7 Minutes Ago</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg2">
+                        <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>You missed you Password!</h4>
+                        <span class="time"><i class="ti-time"></i>09:20 Am</span>
+                    </div>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg3">
+                        <i class="fa fa-bomb"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Member waiting for you Attention</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg3">
+                        <i class="ti-signal"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>You Added Kaji Patha few minutes ago</h4>
+                        <span class="time"><i class="ti-time"></i>01 minutes ago</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg1">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Ratul Hamba sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Hello sir , where are you, i am egerly waiting for you.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg2">
+                        <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Rashed sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg2">
+                        <i class="fa fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Rashed sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg3">
+                        <i class="fa fa-bomb"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Rashed sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+                <div class="timeline-task">
+                    <div class="icon bg3">
+                        <i class="ti-signal"></i>
+                    </div>
+                    <div class="tm-title">
+                        <h4>Rashed sent you an email</h4>
+                        <span class="time"><i class="ti-time"></i>09:35</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="settings" class="tab-pane fade">
+            <div class="offset-settings">
+                <h4>General Settings</h4>
+                <div class="settings-list">
+                    <div class="s-settings">
+                        <div class="s-sw-title">
+                            <h5>Notifications</h5>
+                            <div class="s-swtich">
+                                <input type="checkbox" id="switch1"/>
+                                <label for="switch1">Toggle</label>
+                            </div>
+                        </div>
+                        <p>Keep it 'On' When you want to get all the notification.</p>
+                    </div>
+                    <div class="s-settings">
+                        <div class="s-sw-title">
+                            <h5>Show recent activity</h5>
+                            <div class="s-swtich">
+                                <input type="checkbox" id="switch2"/>
+                                <label for="switch2">Toggle</label>
+                            </div>
+                        </div>
+                        <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
+                    </div>
+                    <div class="s-settings">
+                        <div class="s-sw-title">
+                            <h5>Show your emails</h5>
+                            <div class="s-swtich">
+                                <input type="checkbox" id="switch3"/>
+                                <label for="switch3">Toggle</label>
+                            </div>
+                        </div>
+                        <p>Show email so that easily find you.</p>
+                    </div>
+                    <div class="s-settings">
+                        <div class="s-sw-title">
+                            <h5>Show Task statistics</h5>
+                            <div class="s-swtich">
+                                <input type="checkbox" id="switch4"/>
+                                <label for="switch4">Toggle</label>
+                            </div>
+                        </div>
+                        <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
+                    </div>
+                    <div class="s-settings">
+                        <div class="s-sw-title">
+                            <h5>Notifications</h5>
+                            <div class="s-swtich">
+                                <input type="checkbox" id="switch5"/>
+                                <label for="switch5">Toggle</label>
+                            </div>
+                        </div>
+                        <p>Use checkboxes when looking for yes or no answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- offset area end -->
+<!-- jquery latest version -->
+<script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/metisMenu.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/jquery.slicknav.min.js"></script>
 
-<!-- Vendor js -->
-<script src="/assets/js/vendor.min.js"></script>
-
-<!--C3 Chart-->
-<script src="/assets/libs/d3/d3.min.js"></script>
-<script src="/assets/libs/c3/c3.min.js"></script>
-
-<script src="/assets/libs/echarts/echarts.min.js"></script>
-
-<script src="/assets/js/pages/dashboard.init.js"></script>
-
-<!-- App js -->
-<script src="/assets/js/app.min.js"></script>
-<?php require $base . $dirSep . "components" . $dirSep . "toastsJs.php" ?>
+<!-- start chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<!-- start highcharts js -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- start zingchart js -->
+<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+<script>
+    zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+    ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+</script>
+<!-- all line chart activation -->
+<script src="/assets/js/line-chart.js"></script>
+<!-- all pie chart -->
+<script src="/assets/js/pie-chart.js"></script>
+<!-- others plugins -->
+<script src="/assets/js/plugins.js"></script>
+<script src="/assets/js/scripts.js"></script>
 </body>
 
 </html>

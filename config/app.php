@@ -11,5 +11,8 @@ return [
         'panel' => '/panel',
         'userList' => '/panel/user',
 
+        // user Routes
+        'games' => '/panel/games'
+
     ],
 ];
