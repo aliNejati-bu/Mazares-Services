@@ -1,10 +1,10 @@
 <?php
 
-namespace RemoteConfig\App\Controller\Admin;
+namespace MazaresServeces\App\Controller\Admin;
 
-use RemoteConfig\App\Model\User;
-use RemoteConfig\Classes\Exception\ViewNotFoundedException;
-use RemoteConfig\Classes\ViewEngine;
+use MazaresServeces\App\Model\User;
+use MazaresServeces\Classes\Exception\ViewNotFoundedException;
+use MazaresServeces\Classes\ViewEngine;
 
 class UserController
 {

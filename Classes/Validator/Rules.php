@@ -1,10 +1,10 @@
 <?php
 
-namespace RemoteConfig\Classes\Validator;
+namespace MazaresServeces\Classes\Validator;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;
-use RemoteConfig\Classes\Config;
+use MazaresServeces\Classes\Config;
 
 class Rules
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace RemoteConfig\Classes\Validator;
+namespace MazaresServeces\Classes\Validator;
 
-use RemoteConfig\Classes\Config;
-use RemoteConfig\Classes\Exception\ValidatorNotFoundException;
+use MazaresServeces\Classes\Config;
+use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
 use Somnambulist\Components\Validation\Factory;
 use Somnambulist\Components\Validation\Validation;
 

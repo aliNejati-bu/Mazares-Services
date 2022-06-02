@@ -1,14 +1,14 @@
 <?php
 
-namespace RemoteConfig\App\Middleware;
+namespace MazaresServeces\App\Middleware;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-use RemoteConfig\Classes\Auth;
-use RemoteConfig\Classes\Config;
-use RemoteConfig\Classes\Request;
+use MazaresServeces\Classes\Auth;
+use MazaresServeces\Classes\Config;
+use MazaresServeces\Classes\Request;
 
-class ApiAuthMiddleware implements \RemoteConfig\Boot\Interfaces\MiddlewareInterface
+class ApiAuthMiddleware implements \MazaresServeces\Boot\Interfaces\MiddlewareInterface
 {
 
     /**

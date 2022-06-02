@@ -32,7 +32,7 @@
     if (isMessage()){
     foreach (messages() as $error){
     ?>
-    toastr.info('<?= $error ?>')
+    toastr.success('<?= $error ?>')
     <?php
     }
     }

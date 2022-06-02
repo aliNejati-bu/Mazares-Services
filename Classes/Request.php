@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\Classes;
+namespace MazaresServeces\Classes;
 
-use RemoteConfig\Classes\Validator\Validator;
+use MazaresServeces\Classes\Validator\Validator;
 use Somnambulist\Components\Validation\Validation;
 
 class Request

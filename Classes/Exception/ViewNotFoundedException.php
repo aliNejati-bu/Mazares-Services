@@ -1,6 +1,6 @@
 <?php
 
-namespace RemoteConfig\Classes\Exception;
+namespace MazaresServeces\Classes\Exception;
 
 use JetBrains\PhpStorm\Pure;
 use Throwable;

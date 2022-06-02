@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\Database\Seed;
+namespace MazaresServeces\Database\Seed;
 
-use RemoteConfig\App\Model\User;
+use MazaresServeces\App\Model\User;
 
 class UserSeeder
 {

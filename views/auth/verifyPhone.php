@@ -1,6 +1,6 @@
 <?php
 
-use RemoteConfig\Classes\Config;
+use MazaresServeces\Classes\Config;
 
 ?>
 <!DOCTYPE html>

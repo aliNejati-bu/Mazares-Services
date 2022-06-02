@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\Classes;
+namespace MazaresServeces\Classes;
 
-use RemoteConfig\Classes\Exception\ViewNotFoundedException;
+use MazaresServeces\Classes\Exception\ViewNotFoundedException;
 
 class ViewEngine
 {

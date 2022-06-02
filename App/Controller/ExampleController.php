@@ -1,6 +1,6 @@
 <?php
 
-namespace RemoteConfig\App\Controller;
+namespace MazaresServeces\App\Controller;
 
 class ExampleController
 {

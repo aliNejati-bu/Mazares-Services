@@ -1,9 +1,9 @@
 <?php
 
-namespace RemoteConfig\App\Controller;
+namespace MazaresServeces\App\Controller;
 
-use RemoteConfig\Classes\Redirect;
-use RemoteConfig\Classes\ViewEngine;
+use MazaresServeces\Classes\Redirect;
+use MazaresServeces\Classes\ViewEngine;
 
 class PanelController
 {

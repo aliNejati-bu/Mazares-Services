@@ -3,11 +3,11 @@
 
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
-use RemoteConfig\Classes\Auth;
-use RemoteConfig\Classes\Messages;
-use RemoteConfig\Classes\Redirect;
-use RemoteConfig\Classes\Request;
-use RemoteConfig\Classes\ViewEngine;
+use MazaresServeces\Classes\Auth;
+use MazaresServeces\Classes\Messages;
+use MazaresServeces\Classes\Redirect;
+use MazaresServeces\Classes\Request;
+use MazaresServeces\Classes\ViewEngine;
 
 #[Pure] function redirect(string $target): Redirect
 {
@@ -47,10 +47,10 @@ function error(string $name, bool $default = false): mixed
 
 function route($name, ...$params)
 {
-    if (!isset(\RemoteConfig\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
+    if (!isset(\MazaresServeces\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
         return '/';
     }
-    $route = \RemoteConfig\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
+    $route = \MazaresServeces\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
     foreach ($params as $param) {
         $route = str_replace("!-!", $param, $route);
     }
@@ -87,7 +87,7 @@ function auth(): ?Auth
  */
 function viewPath(string $viewName): string
 {
-    $baseViewPath = \RemoteConfig\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
+    $baseViewPath = \MazaresServeces\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
     return $baseViewPath . DIRECTORY_SEPARATOR . str_replace(">", DIRECTORY_SEPARATOR, $viewName) . ".php";
 }
 
@@ -96,7 +96,7 @@ function viewPath(string $viewName): string
  */
 function get404ViewName(): string
 {
-    return \RemoteConfig\Classes\Config::getInstance()->getAllConfig("view")["404"];
+    return \MazaresServeces\Classes\Config::getInstance()->getAllConfig("view")["404"];
 }
 
 
@@ -128,7 +128,7 @@ function isJsonAccept(): bool
 
 function sms()
 {
-    return \RemoteConfig\Classes\SMS\SMSManager::getInstance();
+    return \MazaresServeces\Classes\SMS\SMSManager::getInstance();
 }
 
 

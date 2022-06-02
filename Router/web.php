@@ -1,24 +1,28 @@
 <?php
 
 use Phroute\Phroute\RouteCollector;
-use RemoteConfig\App\Controller\PanelController;
+use MazaresServeces\App\Controller\PanelController;
 
 /**
  * @var RouteCollector $router
  */
 
 
-$router->controller(route("index"), \RemoteConfig\App\Controller\IndexController::class);
+$router->controller(route("index"), \MazaresServeces\App\Controller\IndexController::class);
 
 
 $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], function (RouteCollector $router) {
     $router->get("/", function () {
         return (new PanelController)->index();
     });
-    $router->controller("/user", \RemoteConfig\App\Controller\Admin\UserController::class
+    $router->controller("/user", \MazaresServeces\App\Controller\Admin\UserController::class
     );
 
     $router->get("/games", function () {
-        return (new \RemoteConfig\App\Controller\Game\GameController())->index();
+        return (new \MazaresServeces\App\Controller\Game\GameController())->index();
+    });
+
+    $router->post("/games", function () {
+        return (new \MazaresServeces\App\Controller\Game\GameController())->doCreateGame();
     });
 });

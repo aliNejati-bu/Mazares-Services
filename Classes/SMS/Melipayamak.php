@@ -1,10 +1,10 @@
 <?php
 
-namespace RemoteConfig\Classes\SMS;
+namespace MazaresServeces\Classes\SMS;
 
-use RemoteConfig\Classes\interfaces\SMSSenderInterface;
+use MazaresServeces\Classes\interfaces\SMSSenderInterface;
 
-class Melipayamak implements \RemoteConfig\Classes\interfaces\SMSSenderInterface
+class Melipayamak implements \MazaresServeces\Classes\interfaces\SMSSenderInterface
 {
 
     /**

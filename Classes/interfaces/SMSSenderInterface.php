@@ -1,6 +1,6 @@
 <?php
 
-namespace RemoteConfig\Classes\interfaces;
+namespace MazaresServeces\Classes\interfaces;
 
 interface SMSSenderInterface
 {

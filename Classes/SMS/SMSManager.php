@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\Classes\SMS;
+namespace MazaresServeces\Classes\SMS;
 
-use RemoteConfig\Classes\interfaces\SMSSenderInterface;
+use MazaresServeces\Classes\interfaces\SMSSenderInterface;
 
 class SMSManager
 {

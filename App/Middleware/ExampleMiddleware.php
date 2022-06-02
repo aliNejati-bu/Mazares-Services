@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\App\Middleware;
+namespace MazaresServeces\App\Middleware;
 
-use RemoteConfig\Boot\Interfaces\MiddlewareInterface;
+use MazaresServeces\Boot\Interfaces\MiddlewareInterface;
 
 class ExampleMiddleware implements MiddlewareInterface
 {

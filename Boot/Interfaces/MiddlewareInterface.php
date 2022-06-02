@@ -1,6 +1,6 @@
 <?php
 
-namespace RemoteConfig\Boot\Interfaces;
+namespace MazaresServeces\Boot\Interfaces;
 
 interface MiddlewareInterface
 {

@@ -50,7 +50,43 @@
                         <div class="card-body">
                             <div class="card__header_wrapper">
                                 <h4 class="header-title">Progress Table</h4>
-                                <button class="btn btn-info mb-3">Creat New Game</button>
+                                <button class="btn btn-info mb-3" data-toggle="modal" data-target="#create">Creat New
+                                    Game
+                                </button>
+                                <div class="modal fade bd-example-modal-lg" id="create">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Create new Game</h5>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span></button>
+                                            </div>
+                                            <form method="post">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="example-text-input" class="col-form-label">Game
+                                                            Name *</label>
+                                                        <input class="form-control" required type="text"
+                                                               placeholder="name Here..." id="example-text-input"
+                                                               name="game_name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="example-text-input" class="col-form-label">PackageName *</label>
+                                                        <input class="form-control" required type="text"
+                                                               placeholder="packagename Here..." id="example-text-input"
+                                                               name="packagename">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">Send</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="single-table">
                                 <div class="table-responsive">
@@ -196,7 +232,7 @@
 <!-- others plugins -->
 <script src="/assets/js/plugins.js"></script>
 <script src="/assets/js/scripts.js"></script>
-<?php require viewPath("components>toastsJs")?>
+<?php require viewPath("components>toastsJs") ?>
 </body>
 
 </html>

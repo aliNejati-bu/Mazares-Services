@@ -1,10 +1,10 @@
 <?php
 
-namespace RemoteConfig\Classes;
+namespace MazaresServeces\Classes;
 
 use Firebase\JWT\JWT;
-use RemoteConfig\App\Model\User;
-use RemoteConfig\App\Model\UserSessionActivity;
+use MazaresServeces\App\Model\User;
+use MazaresServeces\App\Model\UserSessionActivity;
 
 class Auth
 {

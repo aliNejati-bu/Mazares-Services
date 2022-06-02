@@ -1,8 +1,8 @@
 <?php
 
-namespace RemoteConfig\Database\Seed;
+namespace MazaresServeces\Database\Seed;
 
-use RemoteConfig\App\Model\Role;
+use MazaresServeces\App\Model\Role;
 
 class DataBaseSeeder
 {
