@@ -32,4 +32,12 @@ class Game extends Model
     {
         return $this->hasMany(Config::class);
     }
+
+    /**
+     * @return HasMany
+     */
+    public function values(): HasMany
+    {
+        return $this->hasMany(Value::class);
+    }
 }

@@ -5,15 +5,16 @@ namespace RemoteConfig\App\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Config extends Model
+class Value extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'config_name',
-        'game_id'
+        'game_id',
+        'config_id',
+        'name',
+        'value'
     ];
 
     /**
@@ -24,11 +25,13 @@ class Config extends Model
         return $this->belongsTo(Game::class);
     }
 
+
     /**
-     * @return HasMany
+     * @return BelongsTo
      */
-    public function values(): HasMany
+    public function config(): BelongsTo
     {
-        return $this->hasMany(Value::class);
+        return $this->belongsTo(Config::class);
     }
+
 }

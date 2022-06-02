@@ -126,11 +126,11 @@ Capsule::schema()->create("configs", function (\Illuminate\Database\Schema\Bluep
     $blueprint->timestamps();
 });
 
-Capsule::schema()->create("values",function (\Illuminate\Database\Schema\Blueprint $blueprint){
+Capsule::schema()->create("values", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->bigInteger("game_id")->unsigned();
     $blueprint->foreign("game_id")->references("id")->on("games")->onDelete("cascade");
-    $blueprint->bigInteger("config_id")->unsigned();
+    $blueprint->bigInteger("config_id")->unsigned()->nullable();
     $blueprint->foreign("config_id")->references("id")->on("configs")->onDelete("cascade");
     $blueprint->string("name");
     $blueprint->string("value");
