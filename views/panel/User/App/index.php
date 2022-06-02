@@ -34,7 +34,7 @@
                         <h4 class="page-title pull-left"><?= $title ?></h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="<?= route("panel") ?>">Home</a></li>
-                            <li>Games</li>
+                            <li>Apps</li>
                         </ul>
                     </div>
                 </div>
@@ -51,24 +51,24 @@
                             <div class="card__header_wrapper">
                                 <h4 class="header-title">Progress Table</h4>
                                 <button class="btn btn-info mb-3" data-toggle="modal" data-target="#create">Creat New
-                                    Game
+                                    App
                                 </button>
                                 <div class="modal fade bd-example-modal-lg" id="create">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Create new Game</h5>
+                                                <h5 class="modal-title">Create new App</h5>
                                                 <button type="button" class="close" data-dismiss="modal">
                                                     <span>&times;</span></button>
                                             </div>
                                             <form method="post">
                                                 <div class="modal-body">
                                                     <div class="form-group">
-                                                        <label for="example-text-input" class="col-form-label">Game
+                                                        <label for="example-text-input" class="col-form-label">App
                                                             Name *</label>
                                                         <input class="form-control" required type="text"
                                                                placeholder="name Here..." id="example-text-input"
-                                                               name="game_name">
+                                                               name="app_name">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="example-text-input" class="col-form-label">PackageName *</label>

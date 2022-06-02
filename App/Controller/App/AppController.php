@@ -1,34 +1,34 @@
 <?php
 
-namespace MazaresServeces\App\Controller\Game;
+namespace MazaresServeces\App\Controller\App;
 
 use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
 use MazaresServeces\Classes\Redirect;
 use MazaresServeces\Classes\ViewEngine;
 
-class GameController
+class AppController
 {
     public function index(): ViewEngine
     {
-        $title = "games";
-        return view('panel>User>Game>index', compact("title"));
+        $title = "apps";
+        return view('panel>User>App>index', compact("title"));
     }
 
     /**
      * @return Redirect
      * @throws ValidatorNotFoundException
      */
-    public function doCreateGame(): Redirect
+    public function doCreateApp(): Redirect
     {
-        request()->validatePostsAndFiles("createGameValidator");
+        request()->validatePostsAndFiles("createAppValidator");
         if (!preg_match("/^[a-z][a-z0-9_]*(\.[a-z0-9_]+)+[0-9a-z_]$/i",request()->getValidated()["packagename"]))
             return \redirect(back())->with("error","packagename only allows a-z, 0-9, _ and dot.");
         try {
-            $result = auth()->userModel->games()->create(request()->getValidated());
+            $result = auth()->userModel->apps()->create(request()->getValidated());
             if (!$result) {
                 return \redirect(back())->with("error", "database Error.");
             }
-            return \redirect(back())->withMessage("message", "Game Created!.");
+            return \redirect(back())->withMessage("message", "App Created!.");
         } catch (\Exception $exception) {
             return \redirect(back())->with("error", "database Error.");
         }

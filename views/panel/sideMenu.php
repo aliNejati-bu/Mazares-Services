@@ -16,9 +16,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-game"></i><span>Games</span></a>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-app"></i><span>Apps</span></a>
                         <ul class="collapse">
-                            <li><a href="<?= route("games") ?>">games Management</a></li>
+                            <li><a href="<?= route("apps") ?>">apps Management</a></li>
                         </ul>
                     </li>
                 </ul>

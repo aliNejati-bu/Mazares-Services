@@ -18,11 +18,11 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->controller("/user", \MazaresServeces\App\Controller\Admin\UserController::class
     );
 
-    $router->get("/games", function () {
-        return (new \MazaresServeces\App\Controller\Game\GameController())->index();
+    $router->get("/apps", function () {
+        return (new \MazaresServeces\App\Controller\App\AppController())->index();
     });
 
-    $router->post("/games", function () {
-        return (new \MazaresServeces\App\Controller\Game\GameController())->doCreateGame();
+    $router->post("/apps", function () {
+        return (new \MazaresServeces\App\Controller\App\AppController())->doCreateApp();
     });
 });

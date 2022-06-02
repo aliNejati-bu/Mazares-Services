@@ -128,9 +128,9 @@ class User extends Model
     /**
      * @return BelongsToMany
      */
-    public function games(): BelongsToMany
+    public function apps(): BelongsToMany
     {
-        return $this->belongsToMany(Game::class);
+        return $this->belongsToMany(App::class);
     }
 
 

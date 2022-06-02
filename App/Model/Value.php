@@ -11,7 +11,7 @@ class Value extends Model
     use HasFactory;
 
     protected $fillable = [
-        'game_id',
+        'app_id',
         'config_id',
         'name',
         'value'
@@ -20,9 +20,9 @@ class Value extends Model
     /**
      * @return BelongsTo
      */
-    public function game(): BelongsTo
+    public function app(): BelongsTo
     {
-        return $this->belongsTo(Game::class);
+        return $this->belongsTo(App::class);
     }
 
 

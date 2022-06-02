@@ -12,7 +12,7 @@ return [
         'userList' => '/panel/user',
 
         // user Routes
-        'games' => '/panel/games'
+        'apps' => '/panel/apps'
 
     ],
 ];

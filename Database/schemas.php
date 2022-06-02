@@ -93,43 +93,43 @@ Capsule::schema()->create("user_session_activities", function (\Illuminate\Datab
 });
 
 
-Capsule::schema()->create("games", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
+Capsule::schema()->create("apps", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->string("packagename")->unique();
-    $blueprint->string("game_name");
+    $blueprint->string("app_name");
     $blueprint->timestamps();
 });
 
-Capsule::schema()->create("game_user", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
+Capsule::schema()->create("app_user", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->bigInteger("user_id")->unsigned();
-    $blueprint->bigInteger("game_id")->unsigned();
+    $blueprint->bigInteger("app_id")->unsigned();
 
     $blueprint->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
-    $blueprint->foreign("game_id")->references("id")->on("games")->onDelete("cascade");
+    $blueprint->foreign("app_id")->references("id")->on("apps")->onDelete("cascade");
 });
 
 Capsule::schema()->create("invites", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
-    $blueprint->bigInteger("game_id")->unsigned();
+    $blueprint->bigInteger("app_id")->unsigned();
     $blueprint->timestamps();
 
-    $blueprint->foreign("game_id")->references("id")->on("games")->onDelete("cascade");
+    $blueprint->foreign("app_id")->references("id")->on("apps")->onDelete("cascade");
 });
 
 
 Capsule::schema()->create("configs", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->string("config_name");
-    $blueprint->bigInteger("game_id")->unsigned();
-    $blueprint->foreign("game_id")->references("id")->on("games")->onDelete("cascade");
+    $blueprint->bigInteger("app_id")->unsigned();
+    $blueprint->foreign("app_id")->references("id")->on("apps")->onDelete("cascade");
 
     $blueprint->timestamps();
 });
 
 Capsule::schema()->create("values", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
-    $blueprint->bigInteger("game_id")->unsigned();
-    $blueprint->foreign("game_id")->references("id")->on("games")->onDelete("cascade");
+    $blueprint->bigInteger("app_id")->unsigned();
+    $blueprint->foreign("app_id")->references("id")->on("apps")->onDelete("cascade");
     $blueprint->bigInteger("config_id")->unsigned()->nullable();
     $blueprint->foreign("config_id")->references("id")->on("configs")->onDelete("cascade");
     $blueprint->string("name");

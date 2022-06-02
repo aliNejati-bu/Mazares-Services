@@ -13,15 +13,15 @@ class Config extends Model
 
     protected $fillable = [
         'config_name',
-        'game_id'
+        'app_id'
     ];
 
     /**
      * @return BelongsTo
      */
-    public function game(): BelongsTo
+    public function app(): BelongsTo
     {
-        return $this->belongsTo(Game::class);
+        return $this->belongsTo(App::class);
     }
 
     /**
