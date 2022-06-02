@@ -71,7 +71,8 @@
                                                                name="app_name">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="example-text-input" class="col-form-label">PackageName *</label>
+                                                        <label for="example-text-input" class="col-form-label">PackageName
+                                                            *</label>
                                                         <input class="form-control" required type="text"
                                                                placeholder="packagename Here..." id="example-text-input"
                                                                name="packagename">
@@ -94,97 +95,30 @@
                                         <thead class="text-uppercase">
                                         <tr>
                                             <th scope="col">ID</th>
-                                            <th scope="col">task</th>
-                                            <th scope="col">Deadline</th>
-                                            <th scope="col">Progress</th>
-                                            <th scope="col">status</th>
+                                            <th scope="col">App Name</th>
+                                            <th scope="col">PackageName</th>
+                                            <th scope="col">Create Date</th>
                                             <th scope="col">action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>
-                                                <div class="progress" style="height: 8px;">
-                                                    <div class="progress-bar" role="progressbar" style="width: 50%;"
-                                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="status-p bg-primary">pending</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><a href="#" class="text-secondary"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                    <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Mark</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>
-                                                <div class="progress" style="height: 8px;">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                         style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="status-p bg-warning">pending</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><a href="#" class="text-secondary"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                    <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Mark</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>
-                                                <div class="progress" style="height: 8px;">
-                                                    <div class="progress-bar bg-success" role="progressbar"
-                                                         style="width: 100%;" aria-valuenow="25" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="status-p bg-success">complate</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><a href="#" class="text-secondary"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                    <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Mark</td>
-                                            <td>09 / 07 / 2018</td>
-                                            <td>
-                                                <div class="progress" style="height: 8px;">
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                         style="width: 85%;" aria-valuenow="25" aria-valuemin="0"
-                                                         aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td><span class="status-p bg-warning">panding</span></td>
-                                            <td>
-                                                <ul class="d-flex justify-content-center">
-                                                    <li class="mr-3"><a href="#" class="text-secondary"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                    <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                        </tr>
+                                        <?php foreach ($apps as $app): ?>
+                                            <tr>
+                                                <th scope="row"><?= $app->id ?></th>
+                                                <td><?= $app->app_name ?></td>
+                                                <td><?= $app->packagename ?></td>
+                                                <td><?= $app->created_at ?></td>
+                                                <td>
+                                                    <ul class="d-flex justify-content-center">
+                                                        <li class="mr-3"><a href="#" class="text-secondary"><i
+                                                                        class="fa fa-edit"></i></a></li>
+                                                        <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+
                                         </tbody>
                                     </table>
                                 </div>
