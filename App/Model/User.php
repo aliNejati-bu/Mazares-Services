@@ -47,8 +47,6 @@ class User extends Model
     }
 
 
-
-
     /**
      * @return HasMany
      */
@@ -65,9 +63,6 @@ class User extends Model
     {
         return $this->belongsToMany(Role::class);
     }
-
-
-
 
 
     public static function getUserByEmailAndPassword(string $email, string $password)
@@ -129,6 +124,16 @@ class User extends Model
     {
         return boolval($this->is_phone_verified);
     }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(Game::class);
+    }
+
+
 
 
 }
