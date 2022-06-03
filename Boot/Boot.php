@@ -16,8 +16,8 @@ class Boot
     public static function load()
     {
         self::generalBoot();
-        self::BootDataBase();
         self::errorReporter();
+        self::BootDataBase();
         $router = new RouteCollector();
 
         date_default_timezone_set("Asia/Tehran");
