@@ -16,5 +16,8 @@
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="stylesheet" href="/assets/css/responsive.css">
 <link rel="stylesheet" href="/assets/css/toastr.min.css">
+<?php
+echo "<style> </style>";
+?>
 <!-- modernizr css -->
 <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>

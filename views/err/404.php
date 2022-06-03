@@ -2,6 +2,9 @@
 <html class="no-js" lang="en">
 
 <head>
+    <?php
+    echo "<style> </style>";
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>404 Error - srtdash</title>
