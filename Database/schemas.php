@@ -137,6 +137,26 @@ Capsule::schema()->create("values", function (\Illuminate\Database\Schema\Bluepr
     $blueprint->timestamps();
 });
 
+Capsule::schema()->create('get_values', function (\Illuminate\Database\Schema\Blueprint $blueprint) {
+    $blueprint->id();
+
+    $blueprint->bigInteger("app_id")->unsigned()->nullable();
+    $blueprint->foreign("app_id")->references("id")->on("apps")->nullOnDelete();
+
+    $blueprint->bigInteger("config_id")->unsigned()->nullable();
+    $blueprint->foreign("config_id")->references("id")->on("configs")->nullOnDelete();
+
+    $blueprint->bigInteger("value_id")->unsigned()->nullable();
+    $blueprint->foreign("value_id")->references("id")->on("values")->nullOnDelete();
+
+    $blueprint->bigInteger("user_id")->unsigned()->nullable();
+    $blueprint->foreign("user_id")->references("id")->on("users")->nullOnDelete();
+
+    $blueprint->string("getter_ip");
+
+    $blueprint->timestamps();
+});
+
 
 
 // TODO: تنظیم محدودیت های دیتا بیسی روی داده ها

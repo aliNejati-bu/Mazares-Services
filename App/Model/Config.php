@@ -31,4 +31,12 @@ class Config extends Model
     {
         return $this->hasMany(Value::class);
     }
+
+    /**
+     * @return HasMany
+     */
+    public function getValues(): HasMany
+    {
+        return $this->hasMany(GetValue::class);
+    }
 }

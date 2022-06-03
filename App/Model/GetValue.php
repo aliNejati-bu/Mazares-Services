@@ -5,18 +5,19 @@ namespace MazaresServeces\App\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Value extends Model
+class GetValue extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'app_id',
         'config_id',
-        'name',
-        'value'
+        'value_id',
+        'getter_ip',
+        'user_id',
     ];
+
 
     /**
      * @return BelongsTo
@@ -26,7 +27,6 @@ class Value extends Model
         return $this->belongsTo(App::class);
     }
 
-
     /**
      * @return BelongsTo
      */
@@ -35,13 +35,19 @@ class Value extends Model
         return $this->belongsTo(Config::class);
     }
 
-
     /**
-     * @return HasMany
+     * @return BelongsTo
      */
-    public function getValues(): HasMany
+    public function value(): BelongsTo
     {
-      return $this->hasMany(GetValue::class);
+        return $this->belongsTo(Value::class);
     }
 
+    /**
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }
