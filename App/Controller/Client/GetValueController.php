@@ -10,6 +10,7 @@ class GetValueController
 {
     public function getValue($packageName, $configName, $valueName)
     {
+        $packageName = str_replace("-", ".", $packageName);
         /**
          * @var null|App $app
          */
@@ -35,8 +36,8 @@ class GetValueController
         }
         GetValue::query()->create(
             [
-                "app_id"=>$app->id,
-                "config_id"=>$config->id,
+                "app_id" => $app->id,
+                "config_id" => $config->id,
                 "value_id" => $value->id,
                 "getter_ip" => request()->ip()
             ]
