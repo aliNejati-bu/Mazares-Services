@@ -42,4 +42,12 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->post("/apps/panel/configs", function () {
         return (new \MazaresServeces\App\Controller\App\Config\ConfigController)->doCreateConfig();
     });
+
+    $router->get("/apps/panel/{param1}/configs/{param2}", function ($param1, $param2) {
+        return (new \MazaresServeces\App\Controller\App\Config\ConfigController())->configPage($param1, $param2);
+    });
+
+    $router->post("/apps/panel/configs/values", function () {
+        return (new \MazaresServeces\App\Controller\App\Config\ConfigController())->createValue();
+    });
 });

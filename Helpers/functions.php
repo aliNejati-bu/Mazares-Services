@@ -52,7 +52,7 @@ function route($name, ...$params)
     }
     $route = \MazaresServeces\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
     foreach ($params as $param) {
-        $route = str_replace("!-!", $param, $route);
+        $route = preg_replace("/!-!/", $param, $route,1);
     }
     return $route;
 }

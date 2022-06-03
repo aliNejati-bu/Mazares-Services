@@ -17,6 +17,7 @@ return [
         'appPanel' => '/dash/apps/panel/!-!',
         'configApp' => '/dash/apps/panel/!-!/configs',
         'appAddConfig' => '/dash/apps/panel/configs',
-
+        'configValues' => '/dash/apps/panel/!-!/configs/!-!',
+        'addConfigValue' => '/dash/apps/panel/configs/values',
     ],
 ];
