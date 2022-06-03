@@ -21,6 +21,7 @@ return [
         'addConfigValue' => '/dash/apps/panel/configs/values',
 
         // api
-        'apiGetConfigValue' => '/api/app/!-!/config/!-!/values/!-!'
+        'apiGetConfigValue' => '/api/app/!-!/config/!-!/values/!-!',
+        'apiGetConfig' => '/api/app/!-!/config/!-!',
     ],
 ];
