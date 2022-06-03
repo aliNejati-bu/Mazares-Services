@@ -113,7 +113,7 @@
                                             <tr>
                                                 <th scope="row"><?= $config->id ?></th>
                                                 <td><?= $config->config_name ?></td>
-                                                <td><?= $config->app_name ?></td>
+                                                <td><?= $config->app->app_name ?> (<?= $config->app->packagename ?>)</td>
                                                 <td><?= $config->created_at ?></td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">

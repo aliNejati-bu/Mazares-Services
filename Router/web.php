@@ -30,6 +30,10 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new \MazaresServeces\App\Controller\App\AppController())->panel($param);
     });
 
+    $router->get("/apps/panel", function () {
+        return (new \MazaresServeces\App\Controller\App\AppController())->panelMenu();
+    });
+
 
     $router->post("/apps/panel/configs", function () {
         return (new \MazaresServeces\App\Controller\App\Config\ConfigController)->doCreateConfig();

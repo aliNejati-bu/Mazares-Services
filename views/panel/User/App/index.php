@@ -108,8 +108,12 @@
                                                 <td>
                                                     <a href="<?= route("appPanel", str_replace(".", "-", $app->packagename)) ?>"><?= $app->app_name ?></a>
                                                 </td>
-                                                <td><?= $app->packagename ?></td>
-                                                <td><?= $app->created_at ?></td>
+                                                <td>
+                                                    <a href="<?= route("appPanel", str_replace(".", "-", $app->packagename)) ?>"><?= $app->packagename ?></a>
+                                                </td>
+                                                <td>
+                                                    <a href="<?= route("appPanel", str_replace(".", "-", $app->packagename)) ?>"><?= $app->created_at ?></a>
+                                                </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
                                                         <li class="mr-3"><a href="#" class="text-secondary"><i

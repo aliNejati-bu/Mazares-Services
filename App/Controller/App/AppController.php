@@ -50,8 +50,21 @@ class AppController
         }
         $title = $app->app_name . " App panel";
 
-        return view("panel>User>App>Panel>index", compact("app", "title","packagenames"));
+        return view("panel>User>App>Panel>index", compact("app", "title", "packagenames"));
 
     }
 
+    /**
+     * @return Redirect
+     */
+    public function panelMenu(): Redirect
+    {
+        $packagename = auth()->userModel->apps()->first(["packagename"]);
+        if (!$packagename) {
+            return \redirect(route("apps"))->with("error", "There is no app. Please create one.");
+        }
+        $packagename = $packagename->packagename;
+        $packagename = str_replace(".","-",$packagename);
+        return \redirect(route("appPanel", $packagename));
+    }
 }
