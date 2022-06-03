@@ -133,13 +133,7 @@ class User extends Model
         return $this->belongsToMany(App::class);
     }
 
-    /**
-     * @return HasMany
-     */
-    public function getValues(): HasMany
-    {
-        return $this->hasMany(GetValue::class);
-    }
+
 
 
 

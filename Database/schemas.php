@@ -149,8 +149,6 @@ Capsule::schema()->create('get_values', function (\Illuminate\Database\Schema\Bl
     $blueprint->bigInteger("value_id")->unsigned()->nullable();
     $blueprint->foreign("value_id")->references("id")->on("values")->nullOnDelete();
 
-    $blueprint->bigInteger("user_id")->unsigned()->nullable();
-    $blueprint->foreign("user_id")->references("id")->on("users")->nullOnDelete();
 
     $blueprint->string("getter_ip");
 
