@@ -40,7 +40,7 @@ class AppController
      * @param string $packageName
      * @return ViewEngine
      */
-    public function panel(string $packageName): ViewEngine
+    public function config(string $packageName): ViewEngine
     {
         $packageName = str_replace("-", ".", $packageName);
         $app = auth()->userModel->apps()->where("packagename", "=", $packageName)->first();
@@ -48,7 +48,7 @@ class AppController
         if (!$app) {
             return view("err>404");
         }
-        $title = $app->app_name . " App panel";
+        $title = $app->app_name . " App Configs";
 
         return view("panel>User>App>Panel>index", compact("app", "title", "packagenames"));
 

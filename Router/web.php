@@ -27,7 +27,11 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     });
 
     $router->get("/apps/panel/{param}", function (string $param) {
-        return (new \MazaresServeces\App\Controller\App\AppController())->panel($param);
+        return redirect(route("configApp", $param));
+    });
+
+    $router->get("/apps/panel/{param}/configs", function (string $param) {
+        return (new \MazaresServeces\App\Controller\App\AppController())->config($param);
     });
 
     $router->get("/apps/panel", function () {

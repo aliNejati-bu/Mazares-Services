@@ -15,6 +15,7 @@ return [
         'apps' => '/dash/apps',
         'firstAppPanel' => '/dash/apps/panel',
         'appPanel' => '/dash/apps/panel/!-!',
+        'configApp' => '/dash/apps/panel/!-!/configs',
         'appAddConfig' => '/dash/apps/panel/configs',
 
     ],
