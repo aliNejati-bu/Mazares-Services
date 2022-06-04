@@ -66,6 +66,11 @@ class Request
     }
 
 
+    public function allGet(): array
+    {
+        return $_GET;
+    }
+
     /**
      * @param string $name
      * @param bool $isRedirectBack

@@ -2,11 +2,10 @@
 
 namespace MazaresServices\App\Controller;
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 use MazaresServices\App\Model\User;
 use MazaresServices\Classes\Auth;
 use MazaresServices\Classes\Exception\ValidatorNotFoundException;
+use MazaresServices\Classes\GoogleLoginWrapper;
 use MazaresServices\Classes\Redirect;
 use MazaresServices\Classes\Request;
 use MazaresServices\Classes\ViewEngine;
@@ -71,5 +70,21 @@ class IndexController
         return redirect(route("panel"))->withMessage('message', "Login successful.");
     }
 
+
+    public function getLoginWithGoogle(): Redirect
+    {
+        $result = GoogleLoginWrapper::getInstance()->getEmailAndName(\request()->allGet()["code"]);
+        if ($result === false) {
+            return \redirect(route("login"))->with("error", "Login failed.");
+        }
+
+        $auth = new Auth();
+
+        $createSessionResult = $auth->googleLogin($result["email"], $result["name"]);
+        if (!$createSessionResult){
+            return \redirect(route("login"))->with("error", "Login failed.");
+        }
+        return \redirect(route("panel"));
+    }
 
 }

@@ -5,7 +5,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 Capsule::schema()->create('users', function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->string("user_email")->unique();
-    $blueprint->string("password");
+    $blueprint->string("password")->nullable();
     $blueprint->string("phone")->nullable()->unique();
     /*
      * user type for present type of user account
