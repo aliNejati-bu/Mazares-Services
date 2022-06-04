@@ -14,6 +14,7 @@ return [
         // user Routes
         'apps' => '/dash/apps',
         'editApps' => '/dash/apps/edit',
+        'deleteApps' => '/dash/apps/delete',
         'firstAppPanel' => '/dash/apps/panel',
         'appPanel' => '/dash/apps/panel/!-!',
         'configApp' => '/dash/apps/panel/!-!/configs',

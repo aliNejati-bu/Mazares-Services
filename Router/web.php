@@ -26,8 +26,13 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new AppController())->index();
     });
 
+
     $router->post("/apps/edit", function () {
         return (new AppController())->editGame();
+    });
+
+    $router->post("/apps/delete", function () {
+        return (new AppController())->deleteApp();
     });
 
     $router->post("/apps", function () {

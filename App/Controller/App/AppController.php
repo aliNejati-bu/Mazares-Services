@@ -100,7 +100,30 @@ class AppController
         $app->packagename = $validData["packagename"];
         $app->save();
 
-        return \redirect(back())->withMessage('msg','Edit Game Successes!');
+        return \redirect(back())->withMessage('msg', 'Edit Game Successes!');
+
+    }
+
+
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function deleteApp(): Redirect
+    {
+        request()->validatePostsAndFiles("deleteAppValidator");
+        $validData = request()->getValidated();
+        /**
+         * @var null|App $app
+         */
+
+        $app = auth()->userModel->apps()->where("id", $validData["app_id"])->first();
+
+        if (!$app) {
+            return \redirect(back())->with("error", "App Not Exists.");
+        }
+        $app->delete();
+        return \redirect(back())->withMessage("msg", "App Deleted.");
 
     }
 }
