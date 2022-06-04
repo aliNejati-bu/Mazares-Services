@@ -1,143 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!doctype html>
+<html class="no-js" lang="en">
 
-<!-- Mirrored from curvestudio.ir/adminox/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 May 2022 13:51:29 GMT -->
 <head>
-    <meta charset="utf-8"/>
-    <title><?= $title ?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description"/>
-    <meta content="Coderthemes" name="author"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-    <?php require $base . $dirSep . "components" . $dirSep . "toastCss.php" ?>
-    <!-- App css -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet"/>
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/app-rtl.css" rel="stylesheet" type="text/css" id="app-stylesheet"/>
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - srtdash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="/assets/css/typography.css">
+    <link rel="stylesheet" href="/assets/css/default-css.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/toastr.min.css">
+    <!-- modernizr css -->
+    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body class="authentication-bg bg-primary authentication-bg-pattern d-flex align-items-center pb-0 vh-100">
-
-
-<div class="account-pages w-100 mt-5 mb-5">
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- preloader area start -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+<!-- preloader area end -->
+<!-- login area start -->
+<div class="login-area">
     <div class="container">
-
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card mb-0">
-
-                    <div class="card-body p-4">
-
-                        <div class="account-box">
-                            <div class="account-logo-box">
-                                <div class="text-center">
-                                    <a href="index.html">
-                                        <img src="assets/images/logo-dark.png" alt="" height="30">
-                                    </a>
-                                </div>
-                                <h5 class="text-uppercase mb-1 mt-4">ورود</h5>
-                                <p class="mb-0">وارد حساب مدیریت خود شوید</p>
-                            </div>
-
-                            <div class="account-content mt-4">
-                                <form class="form-horizontal" method="post">
-
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <label for="emailaddress">ایمیل</label>
-                                            <input class="form-control" type="email" name="email" id="emailaddress" required=""
-                                                   placeholder="ایمیل خود را وارد کنید.">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <div class="col-12">
-                                            <a href="page-recoverpw.html" class="text-muted float-right"><small>رمز عبور
-                                                    خود را فراموش کرده ای؟</small></a>
-                                            <label for="password">رمز عبور</label>
-                                            <input class="form-control" type="password" name="password" required="" id="password"
-                                                   placeholder="رمز عبور خود را وارد کنید.">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <div class="col-12">
-
-                                            <div class="checkbox checkbox-success">
-                                                <input id="remember" type="checkbox" checked="" name="isLong" value="1">
-                                                <label for="remember">
-                                                    مرا به خاطر بسپار
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row text-center mt-2">
-                                        <div class="col-12">
-                                            <button class="btn btn-md btn-block btn-primary waves-effect waves-light ffiy"
-                                                    type="submit">ورود
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="text-center">
-                                            <button type="button"
-                                                    class="btn mr-1 btn-facebook waves-effect waves-light">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </button>
-                                            <button type="button"
-                                                    class="btn mr-1 btn-googleplus waves-effect waves-light">
-                                                <i class="fab fa-google"></i>
-                                            </button>
-                                            <button type="button" class="btn mr-1 btn-twitter waves-effect waves-light">
-                                                <i class="fab fa-twitter"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-4 pt-2">
-                                    <div class="col-sm-12 text-center">
-                                        <p class="text-muted mb-0 ">حساب کاربری ندارید؟ <a href="page-register.html"
-                                                                                           class="text-dark ml-1"><b>ثبت
-                                                    نام</b></a></p>
-                                    </div>
-                                </div>
-
+        <div class="login-box ptb--100">
+            <form method="post">
+                <div class="login-form-head">
+                    <h4>Sign In</h4>
+                    <p>Hello there, Sign in</p>
+                </div>
+                <div class="login-form-body">
+                    <div class="form-gp">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input name="email" type="email" id="exampleInputEmail1">
+                        <i class="ti-email"></i>
+                        <div class="text-danger"></div>
+                    </div>
+                    <div class="form-gp">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password" type="password" id="exampleInputPassword1">
+                        <i class="ti-lock"></i>
+                        <div class="text-danger"></div>
+                    </div>
+                    <div class="row mb-4 rmber-area">
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input name="isLong" value="1" checked type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                                <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
                             </div>
                         </div>
                     </div>
-
+                    <div class="submit-btn-area">
+                        <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        <div class="login-other row mt-4">
+                            <div class="col-12">
+                                <a class="google-login" href="#">Log in with <i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-footer text-center mt-5">
+                        <p class="text-muted">Don't have an account? <a href="<?= route('signup') ?>">Sign up</a></p>
+                    </div>
                 </div>
-                <!-- end card-body -->
-            </div>
-            <!-- end card -->
+            </form>
         </div>
-        <!-- end row -->
     </div>
-    <!-- end container -->
 </div>
-<!-- end page -->
+<!-- login area end -->
 
-<!-- Vendor js -->
-<script src="assets/js/vendor.min.js"></script>
+<!-- jquery latest version -->
+<script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/owl.carousel.min.js"></script>
+<script src="/assets/js/metisMenu.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/jquery.slicknav.min.js"></script>
 
-<!-- App js -->
-<script src="assets/js/app.min.js"></script>
-
-<?php require $base . $dirSep . "components" . $dirSep . "toastsJs.php" ?>
+<!-- others plugins -->
+<script src="/assets/js/plugins.js"></script>
+<script src="/assets/js/scripts.js"></script>
+<?php require viewPath("components>toastsJs") ?>
 </body>
 
-
-<!-- Mirrored from curvestudio.ir/adminox/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 May 2022 13:51:29 GMT -->
 </html>

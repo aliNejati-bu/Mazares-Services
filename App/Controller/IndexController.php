@@ -22,7 +22,7 @@ class IndexController
 
     public function getSignUp(): ViewEngine
     {
-        $title = "ثبت نام";
+        $title = "signUp";
         return view("auth>signUp", compact("title"));
     }
 
@@ -36,9 +36,9 @@ class IndexController
 
         $user = User::create(request()->getValidated());
         if ($user) {
-            return redirect(route('login'))->withMessage("login", "ورود با موفقیت انجام شد.");
+            return redirect(route('login'))->withMessage("login", "signUp successful.");
         }
-        return redirect(back())->with("error", "متاسفانه کاربر ایجاد نشد.");
+        return redirect(back())->with("error", "Registration failed.");
 
         // TODO:: برسی فعال بودن تیک قوانین ما
     }
@@ -48,7 +48,7 @@ class IndexController
      */
     public function getLogin(): ViewEngine
     {
-        $title = "ورود";
+        $title = "Login";
         return view("auth>login", compact("title"));
     }
 
@@ -66,9 +66,9 @@ class IndexController
             Request::getInstance()->getValidated()["isLong"] == "1"
         );
         if (!$loginStatus) {
-            return redirect(back())->with("error", "نام کاربری و رمز عبور همخوانی ندارد.");
+            return redirect(back())->with("error", "Email And Password Not Match.");
         }
-        return redirect(route("panel"))->withMessage('message', "ورود موفقیت آمیز بود.");
+        return redirect(route("panel"))->withMessage('message', "Login successful.");
     }
 
 

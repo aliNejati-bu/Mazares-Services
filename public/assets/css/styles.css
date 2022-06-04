@@ -2435,7 +2435,7 @@ table.dataTable thead td {
 .login-other a {
     display: block;
     width: 100%;
-    max-width: 250px;
+    max-width: 100%;
     height: 43px;
     line-height: 43px;
     border-radius: 40px;
