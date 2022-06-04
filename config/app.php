@@ -10,6 +10,7 @@ return [
         'login' => '/login',
         'panel' => '/dash',
         'userList' => '/dash/user',
+        'logout' => '/logout',
 
         // user Routes
         'apps' => '/dash/apps',

@@ -12,11 +12,9 @@ use MazaresServices\Classes\ViewEngine;
 
 class IndexController
 {
-    public function getIndex(): ViewEngine
+    public function getIndex(): Redirect
     {
-        var_dump($_SESSION);
-        die();
-        return view("index", compact("name"));
+        return \redirect(route('panel'));
     }
 
     public function getSignUp(): ViewEngine
@@ -85,6 +83,13 @@ class IndexController
             return \redirect(route("login"))->with("error", "Login failed.");
         }
         return \redirect(route("panel"));
+    }
+
+
+    public function getLogout(): Redirect
+    {
+        unset($_SESSION["a_token"]);
+        return \redirect("login");
     }
 
 }

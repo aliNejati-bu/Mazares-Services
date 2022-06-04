@@ -103,6 +103,7 @@
                                     <table class="table table-hover progress-table text-center">
                                         <thead class="text-uppercase">
                                         <tr>
+                                            <th scope="col"></th>
                                             <th scope="col">ID</th>
                                             <th scope="col">Config Name</th>
                                             <th scope="col">Config For</th>
@@ -113,13 +114,21 @@
                                         <tbody>
                                         <?php foreach ($app->configs as $config): ?>
                                             <tr>
+                                                <td><i class="fa fa-tags"></i></td>
                                                 <th scope="row"><?= $config->id ?></th>
                                                 <td>
                                                     <a href="<?= route('configValues', str_replace('.', '-', $app->packagename), $config->config_name) ?>"><?= $config->config_name ?></a>
                                                 </td>
-                                                <td><?= $config->app->app_name ?> (<?= $config->app->packagename ?>)
+                                                <td>
+                                                    <a href="<?= route('configValues', str_replace('.', '-', $app->packagename), $config->config_name) ?>">
+                                                        <?= $config->app->app_name ?> (<?= $config->app->packagename ?>)
+                                                    </a>
                                                 </td>
-                                                <td><?= $config->created_at ?></td>
+                                                <td>
+                                                    <a href="<?= route('configValues', str_replace('.', '-', $app->packagename), $config->config_name) ?>">
+                                                        <?= $config->created_at ?>
+                                                    </a>
+                                                </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
                                                         <li class="mr-3"><a data-toggle="modal"
@@ -128,7 +137,8 @@
                                                                             class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
                                                         <li><a data-toggle="modal"
-                                                               data-target="#delete_<?= $config->id ?>" href="#" class="text-danger"><i class="ti-trash"></i></a>
+                                                               data-target="#delete_<?= $config->id ?>" href="#"
+                                                               class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>

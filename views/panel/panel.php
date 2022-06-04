@@ -2,8 +2,10 @@
 <html class="no-js" lang="en">
 
 <head>
-    <?php require viewPath("panel>layout>heade") ?>
-    <title>pricing</title>
+    <?php use MazaresServices\App\Model\GetValue;
+
+    require viewPath("panel>layout>heade") ?>
+    <title>Home | Mazares Services</title>
 </head>
 
 <body>
@@ -43,7 +45,92 @@
         <!-- page title area end -->
         <div class="main-content-inner">
             <div class="row">
-
+                <div class="sales-report-area mt-5 mb-5" style="width: 100%">
+                    <div class="row" style="display: flex;justify-content: space-between;margin: 0 auto">
+                        <div class="col-md-4">
+                            <div class="single-report mb-xs-30">
+                                <div class="chartjs-size-monitor"
+                                     style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                <div class="s-report-inner pr--20 pt--30 mb-3">
+                                    <div class="icon"><i class="fa fa-mobile-phone"></i></div>
+                                    <div class="s-report-title d-flex justify-content-between">
+                                        <h4 class="header-title mb-0"><a href="<?= route('apps') ?>">Apps Count</a></h4>
+                                        <p><a href="<?= route('apps') ?>"><i class="fa fa-plus"></i></a></p>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2><?= auth()->userModel->apps()->count() ?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="single-report mb-xs-30">
+                                <div class="chartjs-size-monitor"
+                                     style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                <div class="s-report-inner pr--20 pt--30 mb-3">
+                                    <div class="icon"><i class="fa fa-ticket"></i></div>
+                                    <div class="s-report-title d-flex justify-content-between">
+                                        <h4 class="header-title mb-0">Support tickets</h4>
+                                        <p><i class="fa fa-plus"></i></p>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2>0</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="single-report">
+                                <div class="chartjs-size-monitor"
+                                     style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                         style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                <div class="s-report-inner pr--20 pt--30 mb-3">
+                                    <div class="icon"><i class="fa fa-user"></i></div>
+                                    <div class="s-report-title d-flex justify-content-between">
+                                        <h4 class="header-title mb-0">Request Count In today</h4>
+                                        <p>24 H</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between pb-2">
+                                        <h2><?php
+                                            $apps = auth()->userModel->apps;
+                                            $count = 0;
+                                            foreach ($apps as $app) {
+                                                $count += GetValue::query()->where("app_id", $app->id)->where("created_at", ">", getStartDay())->count();
+                                            }
+                                            echo $count;
+                                            ?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -54,7 +141,7 @@
 </div>
 <!-- page container area end -->
 <!-- offset area start -->
-<?php require viewPath("panel>layout>offset")?>
+<?php require viewPath("panel>layout>offset") ?>
 <!-- offset area end -->
 <!-- jquery latest version -->
 <script src="/assets/js/vendor/jquery-2.2.4.min.js"></script>

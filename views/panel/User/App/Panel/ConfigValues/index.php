@@ -102,6 +102,7 @@
                                     <table class="table table-hover progress-table text-center">
                                         <thead class="text-uppercase">
                                         <tr>
+                                            <th scope="col"></th>
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Value</th>
@@ -112,6 +113,7 @@
                                         <tbody>
                                         <?php foreach ($config->values as $value): ?>
                                             <tr>
+                                                <td><i class="fa fa-file-text-o"></i></td>
                                                 <th scope="row"><?= $value->id ?></th>
                                                 <td><?= $value->name ?></td>
                                                 <td><?= $value->value ?></td>

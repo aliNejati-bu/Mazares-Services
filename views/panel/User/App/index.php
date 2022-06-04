@@ -94,6 +94,7 @@
                                     <table class="table table-hover progress-table text-center">
                                         <thead class="text-uppercase">
                                         <tr>
+                                            <th></th>
                                             <th scope="col">ID</th>
                                             <th scope="col">App Name</th>
                                             <th scope="col">PackageName</th>
@@ -104,6 +105,7 @@
                                         <tbody>
                                         <?php foreach ($apps as $app): ?>
                                             <tr>
+                                                <td><i class="fa fa-tablet"></i></td>
                                                 <th scope="row"><?= $app->id ?></th>
                                                 <td>
                                                     <a href="<?= route("appPanel", str_replace(".", "-", $app->packagename)) ?>"><?= $app->app_name ?></a>
