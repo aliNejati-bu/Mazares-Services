@@ -1,14 +1,14 @@
 <?php
 
-namespace MazaresServeces\App\Middleware;
+namespace MazaresServices\App\Middleware;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-use MazaresServeces\Classes\Auth;
-use MazaresServeces\Classes\Config;
-use MazaresServeces\Classes\Request;
+use MazaresServices\Classes\Auth;
+use MazaresServices\Classes\Config;
+use MazaresServices\Classes\Request;
 
-class ApiAuthMiddleware implements \MazaresServeces\Boot\Interfaces\MiddlewareInterface
+class ApiAuthMiddleware implements \MazaresServices\Boot\Interfaces\MiddlewareInterface
 {
 
     /**

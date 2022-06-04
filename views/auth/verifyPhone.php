@@ -1,6 +1,6 @@
 <?php
 
-use MazaresServeces\Classes\Config;
+use MazaresServices\Classes\Config;
 
 ?>
 <!DOCTYPE html>

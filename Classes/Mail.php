@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\Classes;
+namespace MazaresServices\Classes;
 
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;

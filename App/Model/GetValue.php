@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\App\Model;
+namespace MazaresServices\App\Model;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

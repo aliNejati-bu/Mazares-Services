@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\Classes;
+namespace MazaresServices\Classes;
 
 class Messages
 {

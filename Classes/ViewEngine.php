@@ -1,8 +1,8 @@
 <?php
 
-namespace MazaresServeces\Classes;
+namespace MazaresServices\Classes;
 
-use MazaresServeces\Classes\Exception\ViewNotFoundedException;
+use MazaresServices\Classes\Exception\ViewNotFoundedException;
 
 class ViewEngine
 {

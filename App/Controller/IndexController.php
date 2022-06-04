@@ -1,15 +1,15 @@
 <?php
 
-namespace MazaresServeces\App\Controller;
+namespace MazaresServices\App\Controller;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
-use MazaresServeces\App\Model\User;
-use MazaresServeces\Classes\Auth;
-use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\Request;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\App\Model\User;
+use MazaresServices\Classes\Auth;
+use MazaresServices\Classes\Exception\ValidatorNotFoundException;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\Request;
+use MazaresServices\Classes\ViewEngine;
 
 class IndexController
 {

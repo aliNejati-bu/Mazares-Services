@@ -1,9 +1,9 @@
 <?php
 
-namespace MazaresServeces\App\Controller;
+namespace MazaresServices\App\Controller;
 
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\ViewEngine;
 
 class PanelController
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace MazaresServeces\Classes;
+namespace MazaresServices\Classes;
 
 use Firebase\JWT\JWT;
-use MazaresServeces\App\Model\User;
-use MazaresServeces\App\Model\UserSessionActivity;
+use MazaresServices\App\Model\User;
+use MazaresServices\App\Model\UserSessionActivity;
 
 class Auth
 {

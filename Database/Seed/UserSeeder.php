@@ -1,8 +1,8 @@
 <?php
 
-namespace MazaresServeces\Database\Seed;
+namespace MazaresServices\Database\Seed;
 
-use MazaresServeces\App\Model\User;
+use MazaresServices\App\Model\User;
 
 class UserSeeder
 {

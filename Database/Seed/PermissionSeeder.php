@@ -1,8 +1,8 @@
 <?php
 
-namespace MazaresServeces\Database\Seed;
+namespace MazaresServices\Database\Seed;
 
-use MazaresServeces\App\Model\Permission;
+use MazaresServices\App\Model\Permission;
 
 class PermissionSeeder
 {

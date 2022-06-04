@@ -1,10 +1,10 @@
 <?php
 
-namespace MazaresServeces\Classes\SMS;
+namespace MazaresServices\Classes\SMS;
 
-use MazaresServeces\Classes\interfaces\SMSSenderInterface;
+use MazaresServices\Classes\interfaces\SMSSenderInterface;
 
-class Melipayamak implements \MazaresServeces\Classes\interfaces\SMSSenderInterface
+class Melipayamak implements \MazaresServices\Classes\interfaces\SMSSenderInterface
 {
 
     /**

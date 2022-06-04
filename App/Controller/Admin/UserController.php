@@ -1,10 +1,10 @@
 <?php
 
-namespace MazaresServeces\App\Controller\Admin;
+namespace MazaresServices\App\Controller\Admin;
 
-use MazaresServeces\App\Model\User;
-use MazaresServeces\Classes\Exception\ViewNotFoundedException;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\App\Model\User;
+use MazaresServices\Classes\Exception\ViewNotFoundedException;
+use MazaresServices\Classes\ViewEngine;
 
 class UserController
 {

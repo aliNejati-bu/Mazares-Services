@@ -7,12 +7,12 @@ use Phroute\Phroute\RouteCollector;
  */
 
 $router->get(route: "/app/{packagename}/config/{configName}/values/{valueName}", handler: function ($packagename, $configName, $valueName) {
-    return (new \MazaresServeces\App\Controller\Client\GetValueController())->getValue($packagename, $configName, $valueName);
+    return (new \MazaresServices\App\Controller\Client\GetValueController())->getValue($packagename, $configName, $valueName);
 });
 
 
 $router->get(route: "/app/{packagename}/config/{configName}", handler: function ($packagename, $configName) {
-    return (new \MazaresServeces\App\Controller\Client\GetValueController())->getAllConfigValue(
+    return (new \MazaresServices\App\Controller\Client\GetValueController())->getAllConfigValue(
         packagename: $packagename,
         configName: $configName
     );

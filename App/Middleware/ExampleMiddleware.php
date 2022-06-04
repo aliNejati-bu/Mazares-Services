@@ -1,8 +1,8 @@
 <?php
 
-namespace MazaresServeces\App\Middleware;
+namespace MazaresServices\App\Middleware;
 
-use MazaresServeces\Boot\Interfaces\MiddlewareInterface;
+use MazaresServices\Boot\Interfaces\MiddlewareInterface;
 
 class ExampleMiddleware implements MiddlewareInterface
 {

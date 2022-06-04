@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\App\Controller;
+namespace MazaresServices\App\Controller;
 
 class ExampleController
 {

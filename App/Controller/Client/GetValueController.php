@@ -1,11 +1,11 @@
 <?php
 
-namespace MazaresServeces\App\Controller\Client;
+namespace MazaresServices\App\Controller\Client;
 
 use JetBrains\PhpStorm\ArrayShape;
-use MazaresServeces\App\Model\App;
-use MazaresServeces\App\Model\Config;
-use MazaresServeces\App\Model\GetValue;
+use MazaresServices\App\Model\App;
+use MazaresServices\App\Model\Config;
+use MazaresServices\App\Model\GetValue;
 
 class GetValueController
 {

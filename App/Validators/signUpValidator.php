@@ -1,7 +1,7 @@
 <?php
 
-use MazaresServeces\App\Model\User;
-use MazaresServeces\Classes\Validator\Rules;
+use MazaresServices\App\Model\User;
+use MazaresServices\Classes\Validator\Rules;
 
 return [
     "user_email" => ['required', 'email', 'min:3',"callback" => Rules::unique(User::class, "user_email")],

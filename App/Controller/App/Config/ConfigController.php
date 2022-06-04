@@ -1,13 +1,13 @@
 <?php
 
-namespace MazaresServeces\App\Controller\App\Config;
+namespace MazaresServices\App\Controller\App\Config;
 
-use MazaresServeces\App\Model\App;
-use MazaresServeces\App\Model\Config;
-use MazaresServeces\App\Model\Value;
-use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\App\Model\App;
+use MazaresServices\App\Model\Config;
+use MazaresServices\App\Model\Value;
+use MazaresServices\Classes\Exception\ValidatorNotFoundException;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\ViewEngine;
 
 class ConfigController
 {

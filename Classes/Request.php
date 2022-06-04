@@ -1,8 +1,8 @@
 <?php
 
-namespace MazaresServeces\Classes;
+namespace MazaresServices\Classes;
 
-use MazaresServeces\Classes\Validator\Validator;
+use MazaresServices\Classes\Validator\Validator;
 use Somnambulist\Components\Validation\Validation;
 
 class Request

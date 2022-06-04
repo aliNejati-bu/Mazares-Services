@@ -1,10 +1,10 @@
 <?php
 
-namespace MazaresServeces\Classes\Validator;
+namespace MazaresServices\Classes\Validator;
 
 use Closure;
 use Illuminate\Database\Eloquent\Model;
-use MazaresServeces\Classes\Config;
+use MazaresServices\Classes\Config;
 
 class Rules
 {

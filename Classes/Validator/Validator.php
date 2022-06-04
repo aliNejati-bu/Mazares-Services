@@ -1,9 +1,9 @@
 <?php
 
-namespace MazaresServeces\Classes\Validator;
+namespace MazaresServices\Classes\Validator;
 
-use MazaresServeces\Classes\Config;
-use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
+use MazaresServices\Classes\Config;
+use MazaresServices\Classes\Exception\ValidatorNotFoundException;
 use Somnambulist\Components\Validation\Factory;
 use Somnambulist\Components\Validation\Validation;
 

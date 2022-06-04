@@ -2,9 +2,9 @@
 
 use Phroute\Phroute\RouteCollector;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use MazaresServeces\Classes\Exception\ViewNotFoundedException;
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\Classes\Exception\ViewNotFoundedException;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\ViewEngine;
 
 class Boot
 {
@@ -70,7 +70,7 @@ class Boot
     public static function generalBoot()
     {
         spl_autoload_register(function ($class) {
-            $class = str_replace('MazaresServeces\\', "", $class);
+            $class = str_replace('MazaresServices\\', "", $class);
             $file = BASE_DIR . DIRECTORY_SEPARATOR .
                 str_replace("\\", DIRECTORY_SEPARATOR, $class) . // replace \ in class namespace to DIRECTORY_SEPARATOR
                 ".php";
@@ -84,7 +84,7 @@ class Boot
     {
 
         $capsule = new Capsule;
-        $dataBaseConfig = \MazaresServeces\Classes\Config::getInstance()->getAllConfig("database");
+        $dataBaseConfig = \MazaresServices\Classes\Config::getInstance()->getAllConfig("database");
         $capsule->addConnection([
 
             "driver" => "mysql",

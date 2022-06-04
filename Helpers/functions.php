@@ -3,11 +3,11 @@
 
 use JetBrains\PhpStorm\ArrayShape;
 use JetBrains\PhpStorm\Pure;
-use MazaresServeces\Classes\Auth;
-use MazaresServeces\Classes\Messages;
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\Request;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\Classes\Auth;
+use MazaresServices\Classes\Messages;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\Request;
+use MazaresServices\Classes\ViewEngine;
 
 #[Pure] function redirect(string $target): Redirect
 {
@@ -47,10 +47,10 @@ function error(string $name, bool $default = false): mixed
 
 function route($name, ...$params)
 {
-    if (!isset(\MazaresServeces\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
+    if (!isset(\MazaresServices\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name])) {
         return '/';
     }
-    $route = \MazaresServeces\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
+    $route = \MazaresServices\Classes\Config::getInstance()->getAllConfig('app')["routes"][$name];
     foreach ($params as $param) {
         $route = preg_replace("/!-!/", $param, $route,1);
     }
@@ -87,7 +87,7 @@ function auth(): ?Auth
  */
 function viewPath(string $viewName): string
 {
-    $baseViewPath = \MazaresServeces\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
+    $baseViewPath = \MazaresServices\Classes\Config::getInstance()->getAllConfig("view")["baseViewDirectory"];
     return $baseViewPath . DIRECTORY_SEPARATOR . str_replace(">", DIRECTORY_SEPARATOR, $viewName) . ".php";
 }
 
@@ -96,7 +96,7 @@ function viewPath(string $viewName): string
  */
 function get404ViewName(): string
 {
-    return \MazaresServeces\Classes\Config::getInstance()->getAllConfig("view")["404"];
+    return \MazaresServices\Classes\Config::getInstance()->getAllConfig("view")["404"];
 }
 
 
@@ -128,7 +128,7 @@ function isJsonAccept(): bool
 
 function sms()
 {
-    return \MazaresServeces\Classes\SMS\SMSManager::getInstance();
+    return \MazaresServices\Classes\SMS\SMSManager::getInstance();
 }
 
 

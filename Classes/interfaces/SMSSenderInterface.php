@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\Classes\interfaces;
+namespace MazaresServices\Classes\interfaces;
 
 interface SMSSenderInterface
 {

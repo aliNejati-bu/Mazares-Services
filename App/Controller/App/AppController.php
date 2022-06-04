@@ -1,10 +1,10 @@
 <?php
 
-namespace MazaresServeces\App\Controller\App;
+namespace MazaresServices\App\Controller\App;
 
-use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
-use MazaresServeces\Classes\Redirect;
-use MazaresServeces\Classes\ViewEngine;
+use MazaresServices\Classes\Exception\ValidatorNotFoundException;
+use MazaresServices\Classes\Redirect;
+use MazaresServices\Classes\ViewEngine;
 
 class AppController
 {

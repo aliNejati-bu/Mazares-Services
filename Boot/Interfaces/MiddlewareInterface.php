@@ -1,6 +1,6 @@
 <?php
 
-namespace MazaresServeces\Boot\Interfaces;
+namespace MazaresServices\Boot\Interfaces;
 
 interface MiddlewareInterface
 {

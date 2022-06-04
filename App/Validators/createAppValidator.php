@@ -1,8 +1,8 @@
 <?php
 
 
-use MazaresServeces\App\Model\App;
-use MazaresServeces\Classes\Validator\Rules;
+use MazaresServices\App\Model\App;
+use MazaresServices\Classes\Validator\Rules;
 
 return [
     "app_name" => ['required', 'alpha_spaces', 'min:3', 'max:100'],
