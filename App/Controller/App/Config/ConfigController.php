@@ -82,7 +82,7 @@ class ConfigController
             /**
              * @var null|Config
              */
-            $config = $app->configs()->where("id", request()->getValidated()["app_id"])->first();
+            $config = $app->configs()->where("id", request()->getValidated()["config_id"])->first();
             if ($config->values()->where("name", request()->getValidated()["name"])->first(["id"])) {
                 return \redirect(back())->with('err', 'Value Name Exists Before.');
             }
