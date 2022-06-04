@@ -127,7 +127,8 @@
                                                                             href="#"
                                                                             class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
-                                                        <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
+                                                        <li><a data-toggle="modal"
+                                                               data-target="#delete_<?= $config->id ?>" href="#" class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>
@@ -185,6 +186,34 @@
                 </div>
             </div>
         </form>
+
+        <div class="modal fade" id="delete_<?= $config->id ?>">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm deletion</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete <?= $config->config_name ?>?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Close
+                        </button>
+                        <form action="<?= route("deleteConfig") ?>" method="post">
+                            <input type="hidden" name="config_id"
+                                   value="<?= $config->id ?>">
+                            <input type="hidden" name="app_id"
+                                   value="<?= $app->id ?>">
+                            <button type="submit" class="btn btn-danger">Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php endforeach; ?>
     <!-- main content area end -->
     <!-- footer area start-->

@@ -101,7 +101,7 @@ class ConfigController
      * @return Redirect
      * @throws ValidatorNotFoundException
      */
-    public function editConfig():Redirect
+    public function editConfig(): Redirect
     {
 
         request()->validatePostsAndFiles("editConfigValidator");
@@ -109,16 +109,16 @@ class ConfigController
         /**
          * @var App|null $app
          */
-        $app = auth()->userModel->apps()->where("id",$validData["app_id"])->first();
-        if (!$app){
+        $app = auth()->userModel->apps()->where("id", $validData["app_id"])->first();
+        if (!$app) {
             return \redirect(back())->with("err", "Config Not Exists.");
         }
 
         /**
          * @var Config|null
          */
-        $config = $app->configs()->where("id",$validData["config_id"])->first();
-        if (!$config){
+        $config = $app->configs()->where("id", $validData["config_id"])->first();
+        if (!$config) {
             return \redirect(back())->with("err", "Config Not Exists.");
         }
 
@@ -128,7 +128,39 @@ class ConfigController
 
         $config->config_name = $validData["config_name"];
         $config->save();
-        return \redirect(back())->withMessage("msg","Config Edited.");
+        return \redirect(back())->withMessage("msg", "Config Edited.");
+    }
+
+
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function deleteConfig(): Redirect
+    {
+        request()->validatePostsAndFiles("deleteConfigValidator");
+        $validData = request()->getValidated();
+        /**
+         * @var App|null $app
+         */
+        $app = auth()->userModel->apps()->where("id", $validData["app_id"])->first();
+        if (!$app) {
+            return \redirect(back())->with("err", "Config Not Exists.");
+        }
+
+        /**
+         * @var Config|null
+         */
+        $config = $app->configs()->where("id", $validData["config_id"])->first();
+        if (!$config) {
+            return \redirect(back())->with("err", "Config Not Exists.");
+        }
+        if ($config->delete()) {
+            return \redirect(back())->withMessage("m", "config Deleted.");
+        } else {
+            return \redirect(back())->with("err", "Config Not Exists.");
+
+        }
     }
 
     /**
@@ -164,8 +196,8 @@ class ConfigController
          */
         $config = $value->config()->first();
 
-        $result = $config->values()->where("name",request()->getValidated()["name"])->first();
-        if ($result && $value->name != request()->getValidated()["name"]){
+        $result = $config->values()->where("name", request()->getValidated()["name"])->first();
+        if ($result && $value->name != request()->getValidated()["name"]) {
             return \redirect(back())->with('err', 'Value Name Exists Before.');
         }
 
@@ -205,9 +237,9 @@ class ConfigController
             return \redirect(back())->with("err", "Value Not Exists.");
         }
 
-        if($value->delete()){
+        if ($value->delete()) {
             return \redirect(back())->withMessage("msg", "Delete Successful");
-        }else{
+        } else {
             return \redirect(back())->with("err", "Value Not Exists.");
         }
     }
