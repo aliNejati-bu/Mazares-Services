@@ -49,7 +49,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card__header_wrapper">
-                                <h4 class="header-title">Progress Table</h4>
+                                <h4 class="header-title">Games List</h4>
                                 <button class="btn btn-info mb-3" data-toggle="modal" data-target="#create">Creat New
                                     App
                                 </button>
@@ -116,13 +116,61 @@
                                                 </td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="#" class="text-secondary"><i
+                                                        <li class="mr-3"><a data-toggle="modal"
+                                                                            data-target="#edit_<?= $app->id ?>" href="#"
+                                                                            class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
                                                         <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>
                                             </tr>
+
+                                            <div class="modal fade bd-example-modal-lg" id="edit_<?= $app->id ?>">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Create new App</h5>
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span></button>
+                                                        </div>
+                                                        <form method="post" action="<?= route("editApps") ?>">
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label for="example-text-input"
+                                                                           class="col-form-label">App
+                                                                        Name *</label>
+                                                                    <input class="form-control" required type="text"
+                                                                           value="<?= $app->app_name ?>"
+                                                                           placeholder="name Here..."
+                                                                           id="example-text-input"
+                                                                           name="app_name">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="example-text-input"
+                                                                           class="col-form-label">PackageName
+                                                                        *</label>
+                                                                    <input class="form-control" required type="text"
+                                                                           value="<?= $app->packagename ?>"
+                                                                           placeholder="packagename Here..."
+                                                                           id="example-text-input"
+                                                                           name="packagename">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input type="hidden" name="app_id"
+                                                                       value="<?= $app->id ?>">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close
+                                                                </button>
+                                                                <button type="submit" class="btn btn-primary">Send
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         <?php endforeach; ?>
 
                                         </tbody>

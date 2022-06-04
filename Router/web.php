@@ -26,6 +26,10 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new AppController())->index();
     });
 
+    $router->post("/apps/edit", function () {
+        return (new AppController())->editGame();
+    });
+
     $router->post("/apps", function () {
         return (new AppController())->doCreateApp();
     });
@@ -64,12 +68,12 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new ConfigController())->deleteValue();
     });
 
-    $router->post("/apps/panel/configs/edit",function (){
-            return (new ConfigController())->editConfig();
+    $router->post("/apps/panel/configs/edit", function () {
+        return (new ConfigController())->editConfig();
     });
 
-    $router->post("/apps/panel/configs/delete",function (){
-            return (new ConfigController())->deleteConfig();
+    $router->post("/apps/panel/configs/delete", function () {
+        return (new ConfigController())->deleteConfig();
     });
 
 });

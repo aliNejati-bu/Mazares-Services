@@ -13,6 +13,7 @@ return [
 
         // user Routes
         'apps' => '/dash/apps',
+        'editApps' => '/dash/apps/edit',
         'firstAppPanel' => '/dash/apps/panel',
         'appPanel' => '/dash/apps/panel/!-!',
         'configApp' => '/dash/apps/panel/!-!/configs',

@@ -2,6 +2,8 @@
 
 namespace MazaresServices\App\Controller\App;
 
+
+use MazaresServices\App\Model\App;
 use MazaresServices\Classes\Exception\ValidatorNotFoundException;
 use MazaresServices\Classes\Redirect;
 use MazaresServices\Classes\ViewEngine;
@@ -64,7 +66,41 @@ class AppController
             return \redirect(route("apps"))->with("error", "There is no app. Please create one.");
         }
         $packagename = $packagename->packagename;
-        $packagename = str_replace(".","-",$packagename);
+        $packagename = str_replace(".", "-", $packagename);
         return \redirect(route("appPanel", $packagename));
+    }
+
+
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function editGame(): Redirect
+    {
+        request()->validatePostsAndFiles("editAppValidator");
+
+        $validData = request()->getValidated();
+
+        /**
+         * @var null|App $app
+         */
+
+        $app = auth()->userModel->apps()->where("id", $validData["app_id"])->first();
+
+        if (!$app) {
+            return \redirect(back())->with("error", "App Not Exists.");
+        }
+
+        $searchByPackageName = App::query()->where("packagename", $validData["packagename"])->first(["id"]);
+        if ($searchByPackageName && $searchByPackageName->id != $app->id) {
+            return \redirect(back())->with("error", "PackageName Exists Before.");
+        }
+
+        $app->app_name = $validData["app_name"];
+        $app->packagename = $validData["packagename"];
+        $app->save();
+
+        return \redirect(back())->withMessage('msg','Edit Game Successes!');
+
     }
 }
