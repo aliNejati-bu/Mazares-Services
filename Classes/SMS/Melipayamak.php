@@ -19,7 +19,7 @@ class Melipayamak implements \MazaresServices\Classes\interfaces\SMSSenderInterf
      */
     public function sendCode(string $code, string $to): bool
     {
-        $url = 'https://console.melipayamak.com/api/send/shared/52f9a404de7b41ae87bf898249ee0673';
+        $url = 'https://console.melipayamak.com/api/send/shared';
         $data = array('bodyId' => 86351, 'to' => $to, 'args' => [$code]);
         $data_string = json_encode($data);
         $ch = curl_init($url);

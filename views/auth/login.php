@@ -69,7 +69,7 @@
                         <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
                         <div class="login-other row mt-4">
                             <div class="col-12">
-                                <a class="google-login" href="#">Log in with <i class="fa fa-google"></i></a>
+                                <a class="google-login" href="<?= \MazaresServices\Classes\GoogleLoginWrapper::getInstance()->getLoginUrl() ?>">Log in with <i class="fa fa-google"></i></a>
                             </div>
                         </div>
                     </div>
