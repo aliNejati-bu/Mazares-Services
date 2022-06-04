@@ -78,7 +78,9 @@
                                                     <div class="form-group">
                                                         <label for="example-text-input" class="col-form-label">
                                                             Value *</label>
-                                                        <textarea name="value" placeholder="Value Here..." class="form-control" required id="" cols="30" rows="10"></textarea>
+                                                        <textarea name="value" placeholder="Value Here..."
+                                                                  class="form-control" required id="" cols="30"
+                                                                  rows="10"></textarea>
                                                     </div>
 
                                                     <input type="hidden" name="config_id" value="<?= $config->id ?>">
@@ -116,13 +118,60 @@
                                                 <td><?= $config->created_at ?></td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="#" class="text-secondary"><i
+                                                        <li class="mr-3"><a href="#" data-toggle="modal"
+                                                                            data-target="#edit-<?= $value->id ?>"
+                                                                            class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
                                                         <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>
                                             </tr>
+                                            <div class="modal fade bd-example-modal-lg" id="edit-<?= $value->id ?>">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Create Value</h5>
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span></button>
+                                                        </div>
+                                                        <form action="<?= route("editConfigValue") ?>" method="post">
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label for="example-text-input"
+                                                                           class="col-form-label">
+                                                                        Name *</label>
+                                                                    <input class="form-control" required type="text"
+                                                                           value="<?= $value->name ?>"
+                                                                           placeholder="name Here..."
+                                                                           id="example-text-input"
+                                                                           name="name">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="example-text-input"
+                                                                           class="col-form-label">
+                                                                        Value *</label>
+                                                                    <textarea name="value" placeholder="Value Here..."
+                                                                              class="form-control" required id=""
+                                                                              cols="30"
+                                                                              rows="10"><?= $value->value ?></textarea>
+                                                                </div>
+
+                                                                <input type="hidden" name="value_id"
+                                                                       value="<?= $value->id ?>">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close
+                                                                </button>
+                                                                <button type="submit" class="btn btn-primary">Send
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         <?php endforeach; ?>
 
                                         </tbody>

@@ -50,4 +50,10 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->post("/apps/panel/configs/values", function () {
         return (new \MazaresServeces\App\Controller\App\Config\ConfigController())->createValue();
     });
+
+
+    $router->post("/apps/panel/configs/values/edit", function () {
+        return (new \MazaresServeces\App\Controller\App\Config\ConfigController())->editValue();
+    });
+
 });

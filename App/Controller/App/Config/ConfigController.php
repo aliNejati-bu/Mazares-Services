@@ -4,6 +4,7 @@ namespace MazaresServeces\App\Controller\App\Config;
 
 use MazaresServeces\App\Model\App;
 use MazaresServeces\App\Model\Config;
+use MazaresServeces\App\Model\Value;
 use MazaresServeces\Classes\Exception\ValidatorNotFoundException;
 use MazaresServeces\Classes\Redirect;
 use MazaresServeces\Classes\ViewEngine;
@@ -82,16 +83,59 @@ class ConfigController
              * @var null|Config
              */
             $config = $app->configs()->where("id", request()->getValidated()["app_id"])->first();
-            if ($config->values()->where("name",request()->getValidated()["name"])->first(["id"])){
-                return \redirect(back())->with('err','Value Name Exists Before.');
+            if ($config->values()->where("name", request()->getValidated()["name"])->first(["id"])) {
+                return \redirect(back())->with('err', 'Value Name Exists Before.');
             }
             $result = $config->values()->create(request()->getValidated());
             if (!$result) {
                 return \redirect(back())->with("error", "DataBase Error.");
             }
-            return \redirect(back())->withMessage("m","Value Created.");
+            return \redirect(back())->withMessage("m", "Value Created.");
         } catch (\Throwable $exception) {
             return \redirect(back())->with("error", "DataBase Error.");
+        }
+    }
+
+
+    public function editConfig()
+    {
+
+    }
+
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function editValue(): Redirect
+    {
+        request()->validatePostsAndFiles("editValueValidator");
+
+        /**
+         * @var null|Value $value
+         */
+        $value = Value::query()->where("id", request()->getValidated()["value_id"])->first();
+        if (!$value) {
+            return \redirect(back())->with("err", "Value Not Exists.");
+        }
+
+        /**
+         * @var App $app
+         */
+        $app = $value->app;
+
+        $foundAppInUser = auth()->userModel->apps()->where("id", $app->id)->first();
+        if (!$foundAppInUser) {
+            return \redirect(back())->with("err", "Value Not Exists.");
+        }
+
+
+        try {
+            $value->name = request()->getValidated()["name"];
+            $value->value = request()->getValidated()["value"];
+            $value->save();
+            return \redirect(back())->withMessage("msg", "Update Successful");
+        } catch (\Exception $exception) {
+            return \redirect(back())->with("err", "Failed To Update.");
         }
     }
 
