@@ -20,6 +20,7 @@ return [
         'configValues' => '/dash/apps/panel/!-!/configs/!-!',
         'addConfigValue' => '/dash/apps/panel/configs/values',
         'editConfigValue' => '/dash/apps/panel/configs/values/edit',
+        'deleteConfigValue' => '/dash/apps/panel/configs/values/delete',
 
         // api
         'apiGetConfigValue' => '/api/app/!-!/config/!-!/values/!-!',

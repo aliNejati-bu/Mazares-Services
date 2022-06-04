@@ -139,4 +139,39 @@ class ConfigController
         }
     }
 
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function deleteValue(): Redirect
+    {
+        request()->validatePostsAndFiles("deleteValueValidator");
+
+        /**
+         * @var null|Value $value
+         */
+        $value = Value::query()->where("id", request()->getValidated()["value_id"])->first();
+        if (!$value) {
+            return \redirect(back())->with("err", "Value Not Exists.");
+        }
+
+        /**
+         * @var App $app
+         */
+        $app = $value->app;
+
+        $foundAppInUser = auth()->userModel->apps()->where("id", $app->id)->first();
+        if (!$foundAppInUser) {
+            return \redirect(back())->with("err", "Value Not Exists.");
+        }
+
+        if($value->delete()){
+            return \redirect(back())->withMessage("msg", "Delete Successful");
+        }else{
+            return \redirect(back())->with("err", "Value Not Exists.");
+        }
+
+    }
+
+
 }

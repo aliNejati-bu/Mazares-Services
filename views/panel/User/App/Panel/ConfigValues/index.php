@@ -122,11 +122,37 @@
                                                                             data-target="#edit-<?= $value->id ?>"
                                                                             class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
-                                                        <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
+                                                        <li><a href="#" data-toggle="modal"
+                                                               data-target="#delete-<?= $value->id ?>" class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>
                                             </tr>
+                                            <div class="modal fade" id="delete-<?= $value->id ?>">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Confirm deletion</h5>
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Are you sure you want to delete <?= $value->name ?>?</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                            <form action="<?= route("deleteConfigValue") ?>" method="post">
+                                                                <input type="hidden" name="value_id"
+                                                                       value="<?= $value->id ?>">
+                                                                <button type="submit" class="btn btn-danger">Delete
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="modal fade bd-example-modal-lg" id="edit-<?= $value->id ?>">
                                                 <div class="modal-dialog modal-lg">
                                                     <div class="modal-content">
