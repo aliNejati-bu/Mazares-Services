@@ -41,6 +41,14 @@ class GetValueController
             $values[$value->name] = $value->value;
         }
 
+        GetValue::query()->create(
+            [
+                "app_id" => $app->id,
+                "config_id" => $config->id,
+                "getter_ip" => request()->ip()
+            ]
+        );
+
         return responseJson(true,["Value Got."],$values);
     }
 
