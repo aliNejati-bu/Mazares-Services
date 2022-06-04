@@ -60,4 +60,8 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new \MazaresServices\App\Controller\App\Config\ConfigController())->deleteValue();
     });
 
+    $router->post("/apps/panel/configs/edit",function (){
+            return (new \MazaresServices\App\Controller\App\Config\ConfigController())->editConfig();
+    });
+
 });

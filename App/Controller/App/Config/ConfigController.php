@@ -97,9 +97,38 @@ class ConfigController
     }
 
 
-    public function editConfig()
+    /**
+     * @return Redirect
+     * @throws ValidatorNotFoundException
+     */
+    public function editConfig():Redirect
     {
 
+        request()->validatePostsAndFiles("editConfigValidator");
+        $validData = request()->getValidated();
+        /**
+         * @var App|null $app
+         */
+        $app = auth()->userModel->apps()->where("id",$validData["app_id"])->first();
+        if (!$app){
+            return \redirect(back())->with("err", "Config Not Exists.");
+        }
+
+        /**
+         * @var Config|null
+         */
+        $config = $app->configs()->where("id",$validData["config_id"])->first();
+        if (!$config){
+            return \redirect(back())->with("err", "Config Not Exists.");
+        }
+
+        if ($app->configs()->where("config_name", $validData["config_name"])->first(["id"])) {
+            return \redirect(back())->with("error", "Config Name Already Exists.");
+        }
+
+        $config->config_name = $validData["config_name"];
+        $config->save();
+        return \redirect(back())->withMessage("msg","Config Edited.");
     }
 
     /**
@@ -123,11 +152,22 @@ class ConfigController
          */
         $app = $value->app;
 
+
         $foundAppInUser = auth()->userModel->apps()->where("id", $app->id)->first();
         if (!$foundAppInUser) {
             return \redirect(back())->with("err", "Value Not Exists.");
         }
 
+
+        /**
+         * @var Config|null $config
+         */
+        $config = $value->config()->first();
+
+        $result = $config->values()->where("name",request()->getValidated()["name"])->first();
+        if ($result && $value->name != request()->getValidated()["name"]){
+            return \redirect(back())->with('err', 'Value Name Exists Before.');
+        }
 
         try {
             $value->name = request()->getValidated()["name"];
@@ -170,7 +210,6 @@ class ConfigController
         }else{
             return \redirect(back())->with("err", "Value Not Exists.");
         }
-
     }
 
 

@@ -34,7 +34,7 @@
                         <h4 class="page-title pull-left"><?= $title ?></h4>
                         <ul class="breadcrumbs pull-left">
                             <li><a href="<?= route("panel") ?>">Home</a></li>
-                            <li><a href="<?= route("apps")?>">Apps</a></li>
+                            <li><a href="<?= route("apps") ?>">Apps</a></li>
                             <li><?= $title ?></li>
                         </ul>
                     </div>
@@ -52,12 +52,14 @@
                             <div class="card__header_wrapper">
                                 <h4 class="header-title">Configs For <?= $app->app_name ?></h4>
                                 <div class="btn-group">
-                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown"
+                                            aria-expanded="false">
                                         select App (<?= $app->packagename ?>)
                                     </button>
                                     <div class="dropdown-menu">
                                         <?php foreach ($packagenames as $packagename): ?>
-                                            <a class="dropdown-item" href="<?= route("appPanel", str_replace(".", "-", $packagename->packagename)) ?>"><?= $packagename->packagename ?></a>
+                                            <a class="dropdown-item"
+                                               href="<?= route("appPanel", str_replace(".", "-", $packagename->packagename)) ?>"><?= $packagename->packagename ?></a>
                                         <?php endforeach; ?>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item">current App : <?= $app->packagename ?> </a>
@@ -112,18 +114,25 @@
                                         <?php foreach ($app->configs as $config): ?>
                                             <tr>
                                                 <th scope="row"><?= $config->id ?></th>
-                                                <td><a href="<?= route('configValues',str_replace('.','-',$app->packagename),$config->config_name) ?>"><?= $config->config_name ?></a></td>
-                                                <td><?= $config->app->app_name ?> (<?= $config->app->packagename ?>)</td>
+                                                <td>
+                                                    <a href="<?= route('configValues', str_replace('.', '-', $app->packagename), $config->config_name) ?>"><?= $config->config_name ?></a>
+                                                </td>
+                                                <td><?= $config->app->app_name ?> (<?= $config->app->packagename ?>)
+                                                </td>
                                                 <td><?= $config->created_at ?></td>
                                                 <td>
                                                     <ul class="d-flex justify-content-center">
-                                                        <li class="mr-3"><a href="#" class="text-secondary"><i
+                                                        <li class="mr-3"><a data-toggle="modal"
+                                                                            data-target="#edit_<?= $config->id ?>"
+                                                                            href="#"
+                                                                            class="text-secondary"><i
                                                                         class="fa fa-edit"></i></a></li>
                                                         <li><a href="#" class="text-danger"><i class="ti-trash"></i></a>
                                                         </li>
                                                     </ul>
                                                 </td>
                                             </tr>
+
                                         <?php endforeach; ?>
 
                                         </tbody>
@@ -133,10 +142,50 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+    <?php foreach ($app->configs as $config): ?>
+        <form action="<?= route("editConfig") ?>" method="post">
+            <div class="modal fade bd-example-modal-lg"
+                 id="edit_<?= $config->id ?>">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create new Config</h5>
+                            <button type="button" class="close"
+                                    data-dismiss="modal">
+                                <span>&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="example-text-input"
+                                       class="col-form-label">Config
+                                    Name *</label>
+                                <input class="form-control" required type="text"
+                                       placeholder="name Here..."
+                                       id="example-text-input"
+                                       name="config_name"
+                                       value="<?= $config->config_name ?>">
+                            </div>
+                            <input type="hidden" name="app_id"
+                                   value="<?= $app->id ?>">
+                            <input type="hidden" name="config_id"
+                                   value="<?= $config->id ?>">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close
+                            </button>
+                            <button type="submit" class="btn btn-primary">Send
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    <?php endforeach; ?>
     <!-- main content area end -->
     <!-- footer area start-->
     <?php require viewPath("panel>layout>footer") ?>
